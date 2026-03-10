@@ -52,9 +52,8 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const App = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     return (
-        <div className="min-h-screen bg-black text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white">
+        <div className="flex-1 bg-black text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white pb-0">
             {/* Background Video Fixed */}
             <video
                 autoPlay
@@ -69,68 +68,8 @@ const App = () => {
             {/* Overlay gradient for video */}
             <div className="fixed inset-0 bg-black/50 z-0 pointer-events-none"></div>
 
-            {/* --- HEADER --- */}
-            <header className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-5 text-white bg-gradient-to-b from-black/80 to-transparent">
-                <div className="flex items-center justify-between w-full">
-                    {/* Left Side Navigation */}
-                    <nav className="hidden md:flex items-center gap-8">
-                        <a href="/about" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase flex items-center gap-1.5">
-                            ABOUT <ChevronDown size={14} strokeWidth={2.5} />
-                        </a>
-                        <a href="/about" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase flex items-center gap-1.5">
-                            CONTACT <ChevronDown size={14} strokeWidth={2.5} />
-                        </a>
-                    </nav>
-
-                    {/* Center Logo */}
-                    <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center bg-[#4E9CE4]/90 backdrop-blur-md px-5 py-2 cursor-pointer shadow-lg z-[110] gap-3 hover:bg-[#4E9CE4] transition-colors">
-                        <div className="w-8 h-8 bg-white flex items-center justify-center relative shadow-sm">
-                            <div className="w-6 h-6 border border-[#4E9CE4] relative flex items-center justify-center">
-                                <span className="text-[#4E9CE4] font-serif text-lg leading-none pt-0.5" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                            </div>
-                            <div className="absolute bottom-0 right-0">
-                                <svg width="3" height="3" viewBox="0 0 10 10" fill="#4E9CE4"><path d="M5 0L6 4L10 5L6 6L5 10L4 6L0 5L4 4Z" /></svg>
-                            </div>
-                        </div>
-                        <span className="text-white font-bold text-lg tracking-[0.15em] leading-none uppercase hidden sm:block">TECHTRONIX</span>
-                    </div>
-
-                    {/* Right Side Navigation */}
-                    <div className="flex items-center gap-6 md:gap-8">
-                        <div className="hidden md:flex items-center gap-8">
-                            <a href="/services" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase">
-                                PROJECTS
-                            </a>
-                            <a href="/services" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase">
-                                SERVICES
-                            </a>
-                        </div>
-                        <button className="border border-white/60 p-1.5 rounded-sm hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-colors text-white hidden md:block">
-                            <Search size={16} strokeWidth={2} />
-                        </button>
-                        {/* Hamburger for mobile */}
-                        <button
-                            className="md:hidden flex flex-col gap-[5px] relative z-[110]"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        >
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}></span>
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></span>
-                        </button>
-                    </div>
-                </div>
-
-                {/* Mobile Menu Dropdown */}
-                <div className={`md:hidden fixed top-0 left-0 w-full h-screen bg-[#4E9CE4]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-10 transition-all duration-300 z-[90] ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                    <a href="/about" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#CED6DE]" onClick={() => setIsMobileMenuOpen(false)}>ABOUT</a>
-                    <a href="/about" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#CED6DE]" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</a>
-                    <a href="/services" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#CED6DE]" onClick={() => setIsMobileMenuOpen(false)}>PROJECTS</a>
-                    <a href="/services" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#CED6DE]" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</a>
-                </div>
-            </header>
-
-            {/* --- HERO SECTION --- (Fixed behind content) */}
-            <div className="fixed inset-0 z-10 w-full h-screen pointer-events-none flex flex-col justify-center px-6 md:px-12 max-w-[1500px] mx-auto pt-20 md:pt-28 lg:pt-32">
+            {/* --- HERO SECTION --- */}
+            <div className="fixed inset-0 z-10 w-full h-[100vh] pointer-events-none flex flex-col justify-center px-6 md:px-12 max-w-[1500px] mx-auto pt-20 md:pt-28 lg:pt-32">
                 <FadeIn className="max-w-[1000px] w-full pointer-events-auto mt-0 lg:mt-8 pt-0">
                     <h1 className="text-[36px] sm:text-[45px] md:text-[60px] lg:text-[85px] font-serif font-bold leading-[1.05] md:leading-[1.0] tracking-tight text-white mb-4 text-left drop-shadow-lg">
                         Engineering<br />
@@ -357,105 +296,7 @@ const App = () => {
                     </FadeIn>
                 </section>
 
-                {/* --- FOOTER --- */}
-                <footer className="relative bg-[#050505] text-white pt-24 pb-8 px-10 overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image src="/blue-i1.jpg" alt="Footer bg" fill className="object-cover opacity-30 mix-blend-overlay" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/90 to-[#4E9CE4]/30 pointer-events-none"></div>
-                    </div>
-                    <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
 
-                        {/* Left Brand Column */}
-                        <div className="lg:col-span-4">
-                            <div className="flex items-center gap-3 cursor-pointer shrink-0 mb-8">
-                                {/* Custom Logo mirroring the header */}
-                                <div className="w-12 h-12 bg-[#4E9CE4] flex items-center justify-center relative shadow-sm">
-                                    <div className="w-9 h-9 border border-white/90 relative flex items-center justify-center">
-                                        <span className="text-white font-serif text-2xl pt-1" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                                    </div>
-                                    <div className="absolute bottom-1 right-1">
-                                        <svg width="4" height="4" viewBox="0 0 10 10" fill="white"><path d="M5 0L6 4L10 5L6 6L5 10L4 6L0 5L4 4Z" /></svg>
-                                    </div>
-                                </div>
-                                <div className="flex flex-col">
-                                    <span className="text-[26px] font-bold text-white leading-none tracking-wide">TECHTRONIX</span>
-                                    <span className="text-[14px] text-[#4E9CE4] leading-none mt-1.5 tracking-widest font-sans font-bold uppercase">Solutions</span>
-                                </div>
-                            </div>
-                            <p className="text-[14px] text-[#CED6DE] leading-relaxed mb-8 pr-4 font-medium">
-                                Global headquarters in Lahore. Regional offices in Karachi, Islamabad, and Multan. Leading the world in structural innovation.
-                            </p>
-                            <div className="flex gap-4">
-                                <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                    <Linkedin size={16} className="group-hover:scale-110 transition-transform" />
-                                </a>
-                                <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                    <Twitter size={16} className="group-hover:scale-110 transition-transform" />
-                                </a>
-                                <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                    <Instagram size={16} className="group-hover:scale-110 transition-transform" />
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Links Columns */}
-                        <div className="lg:col-span-8 lg:ml-auto grid grid-cols-2 md:grid-cols-3 gap-16 lg:gap-24 pt-4">
-                            <div>
-                                <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Services</h4>
-                                <ul className="flex flex-col gap-4">
-                                    {[
-                                        { name: 'Civil Engineering', url: '/services' },
-                                        { name: 'BIM Modeling', url: '/services' },
-                                        { name: 'Project Mgmt', url: '/services' },
-                                        { name: 'Structural Audit', url: '/services' }
-                                    ].map(link => (
-                                        <li key={link.name}>
-                                            <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Company</h4>
-                                <ul className="flex flex-col gap-4">
-                                    {[
-                                        { name: 'Our Story', url: '/about' },
-                                        { name: 'Sustainability', url: '/about' },
-                                        { name: 'Safety First', url: '/about' },
-                                        { name: 'Newsroom', url: '/about' }
-                                    ].map(link => (
-                                        <li key={link.name}>
-                                            <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Legal</h4>
-                                <ul className="flex flex-col gap-4">
-                                    {[
-                                        { name: 'Privacy Policy', url: '#' },
-                                        { name: 'Terms of Service', url: '#' }
-                                    ].map(link => (
-                                        <li key={link.name}>
-                                            <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Bottom Bar */}
-                    <div className="relative z-10 max-w-[1400px] mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-[13px] text-[#CED6DE] font-medium tracking-wide">
-                            © 2026 Techtronix Infrastructure & Engineering. All rights reserved.
-                        </p>
-                        <p className="text-[13px] text-[#CED6DE] font-medium tracking-wide">
-                            Designed with Precision by Huzaifa
-                        </p>
-                    </div>
-                </footer>
             </div>
         </div>
     );

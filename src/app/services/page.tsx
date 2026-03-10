@@ -47,74 +47,15 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const ServicesPage = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     return (
-        <div className="min-h-screen bg-[#eaf2fb] text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white flex flex-col relative">
+        <div className="flex-1 bg-[#eaf2fb] text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white flex flex-col relative mt-0">
 
             {/* Global Background Layer for glassmorphism effect (matching the cloudy/blue sky theme) */}
             <div className="fixed inset-0 z-0 pointer-events-none mix-blend-multiply opacity-40">
                 <Image src="/blue-i1.jpg" alt="Background" fill className="object-cover" />
             </div>
 
-            {/* --- HEADER --- */}
-            <header className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-5 text-white bg-gradient-to-b from-[#1b326b]/95 to-transparent backdrop-blur-sm">
-                <div className="flex items-center justify-between w-full">
-                    {/* Left Side Navigation */}
-                    <nav className="hidden md:flex items-center gap-8">
-                        <a href="/about" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase flex items-center gap-1.5">
-                            ABOUT <ChevronDown size={14} strokeWidth={2.5} />
-                        </a>
-                        <a href="/contact" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase flex items-center gap-1.5">
-                            CONTACT <ChevronDown size={14} strokeWidth={2.5} />
-                        </a>
-                    </nav>
 
-                    {/* Center Logo */}
-                    <a href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center bg-[#1b326b]/90 backdrop-blur-md px-5 py-2 hover:bg-[#142654] transition-colors cursor-pointer shadow-lg z-[110] gap-3 border border-white/10">
-                        <div className="w-8 h-8 bg-white flex items-center justify-center relative shadow-sm">
-                            <div className="w-6 h-6 border border-[#1b326b] relative flex items-center justify-center">
-                                <span className="text-[#1b326b] font-serif text-lg leading-none md:pt-0.5" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                            </div>
-                            <div className="absolute bottom-0 right-0">
-                                <svg width="3" height="3" viewBox="0 0 10 10" fill="#1b326b"><path d="M5 0L6 4L10 5L6 6L5 10L4 6L0 5L4 4Z" /></svg>
-                            </div>
-                        </div>
-                        <span className="text-white font-bold text-lg tracking-[0.15em] leading-none uppercase hidden sm:block">TECHTRONIX</span>
-                    </a>
-
-                    {/* Right Side Navigation */}
-                    <div className="flex items-center gap-6 md:gap-8">
-                        <div className="hidden md:flex items-center gap-8">
-                            <a href="/services" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase">
-                                PROJECTS
-                            </a>
-                            <a href="/services" className="text-[13px] font-semibold tracking-[0.1em] text-[#4E9CE4] transition-colors uppercase">
-                                SERVICES
-                            </a>
-                        </div>
-                        <button className="border border-white/60 p-1.5 rounded-sm hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-colors text-white hidden md:block">
-                            <Search size={16} strokeWidth={2} />
-                        </button>
-                        {/* Hamburger for mobile */}
-                        <button
-                            className="md:hidden flex flex-col gap-[5px] relative z-[110]"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        >
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}></span>
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></span>
-                        </button>
-                    </div>
-                </div>
-
-                {/* Mobile Menu Dropdown */}
-                <div className={`md:hidden fixed top-0 left-0 w-full h-screen bg-[#1b326b]/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10 transition-all duration-300 z-[90] ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                    <a href="/about" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#4E9CE4]" onClick={() => setIsMobileMenuOpen(false)}>ABOUT</a>
-                    <a href="/contact" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#4E9CE4]" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</a>
-                    <a href="/services" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#4E9CE4]" onClick={() => setIsMobileMenuOpen(false)}>PROJECTS</a>
-                    <a href="/services" className="text-2xl font-bold tracking-widest text-[#4E9CE4] uppercase" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</a>
-                </div>
-            </header>
 
             {/* --- HERO SECTION ---  */}
             <div className="relative z-10 w-full pt-32 pb-24 md:pt-44 md:pb-32 px-6 md:px-12 max-w-[1500px] mx-auto min-h-[50vh] flex flex-col justify-center">
@@ -172,20 +113,20 @@ const ServicesPage = () => {
 
                     {/* Row 1: Right */}
                     <FadeIn delay={200} className="w-full">
-                        <div className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group">
+                        <a href="/contactor-pre-engineering" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
                                     <Map size={24} className="text-[#1b326b]" strokeWidth={2} />
                                 </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">Pre-Engineering Surveys</h3>
+                                <h3 className="text-xl font-medium text-[#1b326b]">Contactor Pre-Engineering</h3>
                             </div>
                             <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Detailed pre-engineering surveys to assess site conditions and inform project design.
+                                Detailed pre-engineering structuring, cost-estimation, and mitigation surveys to assess site conditions and inform project design.
                             </p>
                             <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
                                 Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </div>
-                        </div>
+                        </a>
                     </FadeIn>
 
                     {/* Row 2: Left (Image Card) */}
@@ -204,7 +145,7 @@ const ServicesPage = () => {
 
                     {/* Row 2: Right */}
                     <FadeIn delay={200} className="w-full">
-                        <div className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group">
+                        <a href="/roms-bustin-system" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
                                     <Settings size={22} className="text-[#1b326b]" strokeWidth={2} />
@@ -217,12 +158,12 @@ const ServicesPage = () => {
                             <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
                                 Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </div>
-                        </div>
+                        </a>
                     </FadeIn>
 
                     {/* Row 3: Left */}
                     <FadeIn delay={100} className="w-full">
-                        <div className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group">
+                        <a href="/geosynthetics-solutions" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
                                     <Layers size={22} className="text-[#1b326b]" strokeWidth={2} />
@@ -235,25 +176,25 @@ const ServicesPage = () => {
                             <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
                                 Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </div>
-                        </div>
+                        </a>
                     </FadeIn>
 
                     {/* Row 3: Right */}
                     <FadeIn delay={200} className="w-full">
-                        <div className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group">
+                        <a href="/engineering-solutions" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
                                     <Briefcase size={22} className="text-[#1b326b]" strokeWidth={2} />
                                 </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">Engineering Consultancy</h3>
+                                <h3 className="text-xl font-medium text-[#1b326b]">Engineering Solutions</h3>
                             </div>
                             <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Expert consultancy services, focused on construction, design, and infrastructure development.
+                                Modern civil engineering services for efficient planning, precise design & innovative solutions.
                             </p>
                             <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
                                 Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </div>
-                        </div>
+                        </a>
                     </FadeIn>
 
                     {/* Row 4: Left (Image Card) */}
@@ -272,20 +213,20 @@ const ServicesPage = () => {
 
                     {/* Row 4: Right */}
                     <FadeIn delay={200} className="w-full">
-                        <div className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group">
+                        <a href="/waste-water-treatment-solutions" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
                                     <Droplets size={24} className="text-[#1b326b]" strokeWidth={2} />
                                 </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">Environmental Services</h3>
+                                <h3 className="text-xl font-medium text-[#1b326b]">Waste Water Treatment</h3>
                             </div>
                             <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Sustainable engineering solutions to manage wastewater, air quality, and environmental risks.
+                                Smart, sustainable & compliant water treatment systems to manage wastewater, air quality, and environmental risks.
                             </p>
                             <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
                                 Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </div>
-                        </div>
+                        </a>
                     </FadeIn>
 
                 </div>
@@ -312,104 +253,7 @@ const ServicesPage = () => {
                 </FadeIn>
             </section>
 
-            {/* --- FOOTER --- */}
-            <footer className="relative bg-[#050505] text-white pt-24 pb-8 px-10 overflow-hidden mt-auto">
-                <div className="absolute inset-0 z-0">
-                    <Image src="/blue-i1.jpg" alt="Footer bg" fill className="object-cover opacity-30 mix-blend-overlay" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/90 to-[#4E9CE4]/30 pointer-events-none"></div>
-                </div>
-                <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
 
-                    {/* Left Brand Column */}
-                    <div className="lg:col-span-4">
-                        <div className="flex items-center gap-3 cursor-pointer shrink-0 mb-8">
-                            <div className="w-12 h-12 bg-[#4E9CE4] flex items-center justify-center relative shadow-sm">
-                                <div className="w-9 h-9 border border-white/90 relative flex items-center justify-center">
-                                    <span className="text-white font-serif text-2xl pt-1" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                                </div>
-                                <div className="absolute bottom-1 right-1">
-                                    <svg width="4" height="4" viewBox="0 0 10 10" fill="white"><path d="M5 0L6 4L10 5L6 6L5 10L4 6L0 5L4 4Z" /></svg>
-                                </div>
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="text-[26px] font-bold text-white leading-none tracking-wide">TECHTRONIX</span>
-                                <span className="text-[14px] text-[#4E9CE4] leading-none mt-1.5 tracking-widest font-sans font-bold uppercase">Solutions</span>
-                            </div>
-                        </div>
-                        <p className="text-[14px] text-[#CED6DE] leading-relaxed mb-8 pr-4 font-medium">
-                            Global headquarters in Lahore. Regional offices in Karachi, Islamabad, and Multan. Leading the world in structural innovation.
-                        </p>
-                        <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                <Linkedin size={16} className="group-hover:scale-110 transition-transform" />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                <Twitter size={16} className="group-hover:scale-110 transition-transform" />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                <Instagram size={16} className="group-hover:scale-110 transition-transform" />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Links Columns */}
-                    <div className="lg:col-span-8 lg:ml-auto grid grid-cols-2 md:grid-cols-3 gap-16 lg:gap-24 pt-4">
-                        <div>
-                            <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Services</h4>
-                            <ul className="flex flex-col gap-4">
-                                {[
-                                    { name: 'Civil Engineering', url: '/services' },
-                                    { name: 'BIM Modeling', url: '/services' },
-                                    { name: 'Project Mgmt', url: '/services' },
-                                    { name: 'Structural Audit', url: '/services' }
-                                ].map(link => (
-                                    <li key={link.name}>
-                                        <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Company</h4>
-                            <ul className="flex flex-col gap-4">
-                                {[
-                                    { name: 'Our Story', url: '/about' },
-                                    { name: 'Sustainability', url: '/about' },
-                                    { name: 'Safety First', url: '/about' },
-                                    { name: 'Newsroom', url: '/about' }
-                                ].map(link => (
-                                    <li key={link.name}>
-                                        <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Legal</h4>
-                            <ul className="flex flex-col gap-4">
-                                {[
-                                    { name: 'Privacy Policy', url: '#' },
-                                    { name: 'Terms of Service', url: '#' }
-                                ].map(link => (
-                                    <li key={link.name}>
-                                        <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Bottom Bar */}
-                <div className="relative z-10 max-w-[1400px] mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-[13px] text-[#CED6DE] font-medium tracking-wide">
-                        © 2026 Techtronix Infrastructure & Engineering. All rights reserved.
-                    </p>
-                    <p className="text-[13px] text-[#CED6DE] font-medium tracking-wide">
-                        Designed with Precision by Huzaifa
-                    </p>
-                </div>
-            </footer>
         </div>
     );
 };

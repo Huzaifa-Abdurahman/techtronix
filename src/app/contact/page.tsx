@@ -11,6 +11,8 @@ import {
     PhoneIcon,
     MapPinIcon,
     Building2,
+    CheckCircle2,
+    UserIcon,
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -50,74 +52,15 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const ContactPage = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     return (
-        <div className="min-h-screen bg-[#eaf2fb] text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white flex flex-col relative">
+        <div className="flex-1 bg-[#eaf2fb] text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white flex flex-col relative mt-0">
 
             {/* Global Background Layer */}
             <div className="fixed inset-0 z-0 pointer-events-none mix-blend-multiply opacity-20">
                 <Image src="/blue-i1.jpg" alt="Background" fill className="object-cover" />
             </div>
 
-            {/* --- HEADER --- */}
-            <header className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-5 text-white bg-gradient-to-b from-[#1b326b]/95 to-transparent backdrop-blur-sm">
-                <div className="flex items-center justify-between w-full">
-                    {/* Left Side Navigation */}
-                    <nav className="hidden md:flex items-center gap-8">
-                        <a href="/about" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase flex items-center gap-1.5">
-                            ABOUT <ChevronDown size={14} strokeWidth={2.5} />
-                        </a>
-                        <a href="/contact" className="text-[13px] font-semibold tracking-[0.1em] text-[#4E9CE4] transition-colors uppercase flex items-center gap-1.5">
-                            CONTACT <ChevronDown size={14} strokeWidth={2.5} />
-                        </a>
-                    </nav>
 
-                    {/* Center Logo */}
-                    <a href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center bg-[#1b326b]/90 backdrop-blur-md px-5 py-2 hover:bg-[#142654] transition-colors cursor-pointer shadow-lg z-[110] gap-3 border border-white/10">
-                        <div className="w-8 h-8 bg-white flex items-center justify-center relative shadow-sm">
-                            <div className="w-6 h-6 border border-[#1b326b] relative flex items-center justify-center">
-                                <span className="text-[#1b326b] font-serif text-lg leading-none md:pt-0.5" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                            </div>
-                            <div className="absolute bottom-0 right-0">
-                                <svg width="3" height="3" viewBox="0 0 10 10" fill="#1b326b"><path d="M5 0L6 4L10 5L6 6L5 10L4 6L0 5L4 4Z" /></svg>
-                            </div>
-                        </div>
-                        <span className="text-white font-bold text-lg tracking-[0.15em] leading-none uppercase hidden sm:block">TECHTRONIX</span>
-                    </a>
-
-                    {/* Right Side Navigation */}
-                    <div className="flex items-center gap-6 md:gap-8">
-                        <div className="hidden md:flex items-center gap-8">
-                            <a href="/services" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase">
-                                PROJECTS
-                            </a>
-                            <a href="/services" className="text-[13px] font-semibold tracking-[0.1em] text-white hover:text-[#4E9CE4] transition-colors uppercase">
-                                SERVICES
-                            </a>
-                        </div>
-                        <button className="border border-white/60 p-1.5 rounded-sm hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-colors text-white hidden md:block">
-                            <Search size={16} strokeWidth={2} />
-                        </button>
-                        {/* Hamburger for mobile */}
-                        <button
-                            className="md:hidden flex flex-col gap-[5px] relative z-[110]"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        >
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}></span>
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                            <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></span>
-                        </button>
-                    </div>
-                </div>
-
-                {/* Mobile Menu Dropdown */}
-                <div className={`md:hidden fixed top-0 left-0 w-full h-screen bg-[#1b326b]/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10 transition-all duration-300 z-[90] ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                    <a href="/about" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#4E9CE4]" onClick={() => setIsMobileMenuOpen(false)}>ABOUT</a>
-                    <a href="/contact" className="text-2xl font-bold tracking-widest text-[#4E9CE4] uppercase" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</a>
-                    <a href="/services" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#4E9CE4]" onClick={() => setIsMobileMenuOpen(false)}>PROJECTS</a>
-                    <a href="/services" className="text-2xl font-bold tracking-widest text-white uppercase hover:text-[#4E9CE4]" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</a>
-                </div>
-            </header>
 
             {/* --- HERO SECTION ---  */}
             <div className="relative z-0 w-full min-h-[45vh] flex flex-col justify-center overflow-hidden">
@@ -165,48 +108,51 @@ const ContactPage = () => {
                                 icon: MailIcon,
                                 label: 'Email Us',
                                 value: (
-                                    <a href="mailto:info@techtronix.com" className="hover:text-[#4E9CE4] transition-colors underline-offset-4 hover:underline">
-                                        info@techtronix.com
+                                    <a href="mailto:info@tech-tronix.com" className="hover:text-[#4E9CE4] transition-colors underline-offset-4 hover:underline">
+                                        sales.techtronix@outlook.com
                                     </a>
                                 )
                             },
                             {
                                 icon: PhoneIcon,
-                                label: 'UAN',
-                                value: '+92 (42) 111-527-527',
+                                label: 'Phone',
+                                value: '+92311-0757620',
                             },
                             {
                                 icon: MapPinIcon,
                                 label: 'Head Office',
-                                value: '123, Main Road, Karachi, Pakistan',
+                                value: '102 B OPF, Khayaban e Jinnah, Lahore, Pakistan.',
                             }
                         ]}
                     >
-                        <form action="" className="w-full space-y-5 bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-sm shadow-md border border-white/60">
-                            <div className="mb-4">
-                                <h3 className="text-xl font-serif font-black text-[#1b326b] mb-1">Send a Message</h3>
-                                <p className="text-sm text-slate-500 font-medium">Please fill in the details below.</p>
-                            </div>
-                            <div className="flex flex-col gap-2.5 outline-none border-none">
-                                <Label htmlFor="name" className="text-[#1b326b] font-bold text-xs uppercase tracking-wider">Name</Label>
-                                <Input id="name" type="text" placeholder="John Doe" className="border-[#CED6DE]/60 focus-visible:ring-[#4E9CE4] focus-visible:ring-1 rounded-sm bg-white" />
-                            </div>
-                            <div className="flex flex-col gap-2.5 outline-none border-none">
-                                <Label htmlFor="email" className="text-[#1b326b] font-bold text-xs uppercase tracking-wider">Email</Label>
-                                <Input id="email" type="email" placeholder="john@example.com" className="border-[#CED6DE]/60 focus-visible:ring-[#4E9CE4] focus-visible:ring-1 rounded-sm bg-white" />
-                            </div>
-                            <div className="flex flex-col gap-2.5 outline-none border-none">
-                                <Label htmlFor="phone" className="text-[#1b326b] font-bold text-xs uppercase tracking-wider">Phone</Label>
-                                <Input id="phone" type="tel" placeholder="+92 300 0000000" className="border-[#CED6DE]/60 focus-visible:ring-[#4E9CE4] focus-visible:ring-1 rounded-sm bg-white" />
-                            </div>
-                            <div className="flex flex-col gap-2.5 outline-none border-none">
-                                <Label htmlFor="message" className="text-[#1b326b] font-bold text-xs uppercase tracking-wider">Message</Label>
-                                <Textarea id="message" placeholder="How can we help you?" className="border-[#CED6DE]/60 focus-visible:ring-[#4E9CE4] focus-visible:ring-1 min-h-[120px] rounded-sm bg-white resize-none" />
-                            </div>
-                            <Button className="w-full bg-[#1b326b] hover:bg-[#142654] text-white rounded-sm font-bold tracking-widest uppercase text-xs py-5 mt-2 transition-colors shadow-md border-none outline-none" type="button">
-                                Submit Request
-                            </Button>
-                        </form>
+                        {/* Form Container */}
+                        <div className="flex flex-col gap-8 w-full">
+                            <form action="" className="w-full space-y-5 bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-sm shadow-md border border-white/60">
+                                <div className="mb-4">
+                                    <h3 className="text-xl font-serif font-black text-[#1b326b] mb-1">Send a Message</h3>
+                                    <p className="text-sm text-slate-500 font-medium">Please fill in the details below.</p>
+                                </div>
+                                <div className="flex flex-col gap-2.5 outline-none border-none">
+                                    <Label htmlFor="name" className="text-[#1b326b] font-bold text-xs uppercase tracking-wider">Name</Label>
+                                    <Input id="name" type="text" placeholder="John Doe" className="border-[#CED6DE]/60 focus-visible:ring-[#4E9CE4] focus-visible:ring-1 rounded-sm bg-white" />
+                                </div>
+                                <div className="flex flex-col gap-2.5 outline-none border-none">
+                                    <Label htmlFor="email" className="text-[#1b326b] font-bold text-xs uppercase tracking-wider">Email</Label>
+                                    <Input id="email" type="email" placeholder="john@example.com" className="border-[#CED6DE]/60 focus-visible:ring-[#4E9CE4] focus-visible:ring-1 rounded-sm bg-white" />
+                                </div>
+                                <div className="flex flex-col gap-2.5 outline-none border-none">
+                                    <Label htmlFor="phone" className="text-[#1b326b] font-bold text-xs uppercase tracking-wider">Phone</Label>
+                                    <Input id="phone" type="tel" placeholder="+92 300 0000000" className="border-[#CED6DE]/60 focus-visible:ring-[#4E9CE4] focus-visible:ring-1 rounded-sm bg-white" />
+                                </div>
+                                <div className="flex flex-col gap-2.5 outline-none border-none">
+                                    <Label htmlFor="message" className="text-[#1b326b] font-bold text-xs uppercase tracking-wider">Message</Label>
+                                    <Textarea id="message" placeholder="How can we help you?" className="border-[#CED6DE]/60 focus-visible:ring-[#4E9CE4] focus-visible:ring-1 min-h-[120px] rounded-sm bg-white resize-none" />
+                                </div>
+                                <Button className="w-full bg-[#1b326b] hover:bg-[#142654] text-white rounded-sm font-bold tracking-widest uppercase text-xs py-5 mt-2 transition-colors shadow-md border-none outline-none" type="button">
+                                    Submit Request
+                                </Button>
+                            </form>
+                        </div>
                     </ContactCard>
                 </FadeIn>
             </section>
@@ -254,20 +200,24 @@ const ContactPage = () => {
                         <div className="bg-white/80 backdrop-blur-md border border-[#CED6DE]/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-all h-full flex flex-col group relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#4E9CE4]/5 rounded-bl-[100px] z-0 pointer-events-none"></div>
 
-                            <h3 className="text-xl font-bold text-[#1b326b] mb-6 relative z-10">Lahore</h3>
+                            <h3 className="text-xl font-bold text-[#1b326b] mb-6 relative z-10">Lahore Head Office</h3>
 
                             <div className="space-y-4 relative z-10 flex-1">
                                 <div className="flex items-start gap-3">
                                     <MapPinIcon size={18} className="text-[#4E9CE4] shrink-0 mt-0.5" />
-                                    <p className="text-[14px] text-slate-600 font-medium">Block F, Street 01<br />Gulberg Il, Lahore, Pakistan</p>
+                                    <p className="text-[14px] text-slate-600 font-medium">102 B OPF, Khayaban e Jinnah, Lahore, Pakistan.</p>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <UserIcon size={18} className="text-[#4E9CE4] shrink-0" />
+                                    <p className="text-[14px] text-slate-600 font-medium">Engr.Ahmad Hassan  (BIM structure Engineer)</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <PhoneIcon size={18} className="text-[#4E9CE4] shrink-0" />
-                                    <p className="text-[14px] text-slate-600 font-medium">UAN: +92 (42) 111-527-527</p>
+                                    <p className="text-[14px] text-slate-600 font-medium">Phone: +92311-0757620</p>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#4E9CE4] shrink-0"><path d="M7 22V2h10v20" /><path d="M12 22v-4" /><path d="M7 6h10" /><path d="M7 10h10" /><path d="M7 14h10" /><path d="M7 18h10" /></svg>
-                                    <p className="text-[14px] text-slate-600 font-medium">Fax: +92 (42) 9877-8599</p>
+                                    <MailIcon size={18} className="text-[#4E9CE4] shrink-0" />
+                                    <p className="text-[14px] text-slate-600 font-medium">Email: sales.techtronix@outlook.com</p>
                                 </div>
                             </div>
                         </div>
@@ -300,104 +250,113 @@ const ContactPage = () => {
                 </div>
             </section>
 
-            {/* --- FOOTER --- */}
-            <footer className="relative bg-[#050505] text-white pt-24 pb-8 px-10 overflow-hidden mt-auto">
-                <div className="absolute inset-0 z-0">
-                    <Image src="/blue-i1.jpg" alt="Footer bg" fill className="object-cover opacity-30 mix-blend-overlay" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/90 to-[#4E9CE4]/30 pointer-events-none"></div>
-                </div>
-                <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+            {/* Application Popups */}
+            <CookiesPopup />
+            <NewsletterPopup />
+        </div>
+    );
+};
 
-                    {/* Left Brand Column */}
-                    <div className="lg:col-span-4">
-                        <div className="flex items-center gap-3 cursor-pointer shrink-0 mb-8">
-                            <div className="w-12 h-12 bg-[#4E9CE4] flex items-center justify-center relative shadow-sm">
-                                <div className="w-9 h-9 border border-white/90 relative flex items-center justify-center">
-                                    <span className="text-white font-serif text-2xl pt-1" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                                </div>
-                                <div className="absolute bottom-1 right-1">
-                                    <svg width="4" height="4" viewBox="0 0 10 10" fill="white"><path d="M5 0L6 4L10 5L6 6L5 10L4 6L0 5L4 4Z" /></svg>
-                                </div>
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="text-[26px] font-bold text-white leading-none tracking-wide">TECHTRONIX</span>
-                                <span className="text-[14px] text-[#4E9CE4] leading-none mt-1.5 tracking-widest font-sans font-bold uppercase">Solutions</span>
-                            </div>
-                        </div>
-                        <p className="text-[14px] text-[#CED6DE] leading-relaxed mb-8 pr-4 font-medium">
-                            Global headquarters in Lahore. Regional offices in Karachi, Islamabad, and Multan. Leading the world in structural innovation.
-                        </p>
-                        <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                <Linkedin size={16} className="group-hover:scale-110 transition-transform" />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                <Twitter size={16} className="group-hover:scale-110 transition-transform" />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                                <Instagram size={16} className="group-hover:scale-110 transition-transform" />
-                            </a>
-                        </div>
-                    </div>
+const CookiesPopup = () => {
+    const [isVisible, setIsVisible] = useState(true);
 
-                    {/* Links Columns */}
-                    <div className="lg:col-span-8 lg:ml-auto grid grid-cols-2 md:grid-cols-3 gap-16 lg:gap-24 pt-4">
-                        <div>
-                            <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Services</h4>
-                            <ul className="flex flex-col gap-4">
-                                {[
-                                    { name: 'Civil Engineering', url: '/services' },
-                                    { name: 'BIM Modeling', url: '/services' },
-                                    { name: 'Project Mgmt', url: '/services' },
-                                    { name: 'Structural Audit', url: '/services' }
-                                ].map(link => (
-                                    <li key={link.name}>
-                                        <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Company</h4>
-                            <ul className="flex flex-col gap-4">
-                                {[
-                                    { name: 'Our Story', url: '/about' },
-                                    { name: 'Sustainability', url: '/about' },
-                                    { name: 'Safety First', url: '/about' },
-                                    { name: 'Newsroom', url: '/about' }
-                                ].map(link => (
-                                    <li key={link.name}>
-                                        <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Legal</h4>
-                            <ul className="flex flex-col gap-4">
-                                {[
-                                    { name: 'Privacy Policy', url: '#' },
-                                    { name: 'Terms of Service', url: '#' }
-                                ].map(link => (
-                                    <li key={link.name}>
-                                        <a href={link.url} className="text-[14px] font-medium text-[#CED6DE] hover:text-[#4E9CE4] transition-colors">{link.name}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    if (!isVisible) return null;
 
-                {/* Bottom Bar */}
-                <div className="relative z-10 max-w-[1400px] mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-[13px] text-[#CED6DE] font-medium tracking-wide">
-                        © 2026 Techtronix Infrastructure & Engineering. All rights reserved.
-                    </p>
-                    <p className="text-[13px] text-[#CED6DE] font-medium tracking-wide">
-                        Designed with Precision by Huzaifa
+    return (
+        <div className="fixed bottom-4 left-4 right-4 md:left-auto md:w-[400px] bg-white border border-[#CED6DE] shadow-2xl p-6 rounded-md z-[120]">
+            <h3 className="font-bold text-[#1b326b] mb-2 text-lg">We value your privacy</h3>
+            <p className="text-sm text-slate-600 mb-6 font-medium leading-relaxed">
+                We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies.
+            </p>
+            <div className="flex gap-3">
+                <button
+                    onClick={() => setIsVisible(false)}
+                    className="flex-1 py-2 text-sm font-bold text-[#1b326b] border border-[#1b326b]/20 hover:bg-slate-50 transition-colors rounded-sm"
+                >
+                    Decline
+                </button>
+                <button
+                    onClick={() => setIsVisible(false)}
+                    className="flex-1 py-2 text-sm font-bold text-white bg-[#1b326b] hover:bg-[#4E9CE4] transition-colors rounded-sm shadow-sm"
+                >
+                    Accept All
+                </button>
+            </div>
+        </div>
+    );
+};
+
+const NewsletterPopup = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const [email, setEmail] = useState('');
+    const [subscribed, setSubscribed] = useState(false);
+
+    useEffect(() => {
+        // Show after 3 seconds on the contact page
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (!isVisible) return null;
+
+    return (
+        <div className="fixed inset-0 z-[130] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm pointer-events-auto transition-opacity duration-300">
+            <div className="bg-white max-w-md w-full rounded-md shadow-2xl overflow-hidden relative border border-[#CED6DE]">
+                <button
+                    onClick={() => setIsVisible(false)}
+                    className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-transparent hover:bg-slate-200 text-white hover:text-slate-700 rounded-full transition-colors z-10"
+                >
+                    ✕
+                </button>
+
+                <div className="bg-gradient-to-r from-[#1b326b] to-[#4E9CE4] p-8 text-center relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3"></div>
+                    <MailIcon size={40} className="mx-auto text-white mb-4" />
+                    <h3 className="text-2xl font-serif font-bold text-white mb-2">Subscribe to Our Newsletter</h3>
+                    <p className="text-blue-50/90 text-[15px] font-medium leading-relaxed max-w-sm mx-auto">
+                        Get the latest updates on engineering solutions, projects, and exclusive insights from TechTronix.
                     </p>
                 </div>
-            </footer>
+
+                <div className="p-8">
+                    {subscribed ? (
+                        <div className="text-center py-4">
+                            <CheckCircle2 size={48} className="mx-auto text-emerald-500 mb-4" />
+                            <h4 className="text-lg font-bold text-[#1b326b] mb-2">Thank You!</h4>
+                            <p className="text-slate-600 font-medium">You have successfully subscribed to our newsletter.</p>
+                            <button
+                                onClick={() => setIsVisible(false)}
+                                className="mt-6 w-full py-3 bg-[#1b326b] text-white font-bold rounded-sm text-sm uppercase tracking-wider hover:bg-[#4E9CE4] transition-colors"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    ) : (
+                        <form onSubmit={(e) => { e.preventDefault(); setSubscribed(true); }} className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-2">
+                                <Label htmlFor="newsletter-email" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Email Address</Label>
+                                <Input
+                                    id="newsletter-email"
+                                    type="email"
+                                    required
+                                    placeholder="Enter your email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="border-slate-300 focus-visible:ring-[#4E9CE4] text-base py-3 rounded-sm"
+                                />
+                            </div>
+                            <Button type="submit" className="w-full bg-[#1b326b] hover:bg-[#4E9CE4] text-white py-6 rounded-sm font-bold text-sm tracking-widest uppercase mt-2 shadow-md transition-all hover:shadow-lg">
+                                Subscribe Now
+                            </Button>
+                            <p className="text-xs text-center text-slate-400 font-medium mt-2">
+                                We respect your privacy. No spam ever.
+                            </p>
+                        </form>
+                    )}
+                </div>
+            </div>
         </div>
     );
 };
