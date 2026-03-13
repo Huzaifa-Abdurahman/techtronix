@@ -6,7 +6,7 @@ import { Linkedin, Twitter, Instagram } from 'lucide-react';
 
 export function Footer() {
     return (
-        <footer className="relative bg-[#050505] text-white pt-24 pb-8 px-10 overflow-hidden mt-auto">
+        <footer className="relative z-30 bg-[#050505] text-white pt-24 pb-8 px-10 overflow-hidden mt-auto">
             <div className="absolute inset-0 z-0">
                 <Image src="/blue-i1.jpg" alt="Footer bg" fill className="object-cover opacity-30 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/90 to-[#4E9CE4]/30 pointer-events-none"></div>
