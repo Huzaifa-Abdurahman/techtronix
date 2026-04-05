@@ -108,8 +108,8 @@ const ContactPage = () => {
                                 icon: MailIcon,
                                 label: 'Email Us',
                                 value: (
-                                    <a href="mailto:info@tech-tronix.com" className="hover:text-[#4E9CE4] transition-colors underline-offset-4 hover:underline">
-                                        sales.techtronix@outlook.com
+                                    <a href="mailto:sales@techtronix.org" className="hover:text-[#4E9CE4] transition-colors underline-offset-4 hover:underline">
+                                        sales@techtronix.org
                                     </a>
                                 )
                             },
@@ -170,33 +170,9 @@ const ContactPage = () => {
                     </div>
                 </FadeIn>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                    {/* Karachi Office */}
-                    <FadeIn delay={300} className="w-full">
-                        <div className="bg-white/80 backdrop-blur-md border border-[#CED6DE]/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-all h-full flex flex-col group relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#4E9CE4]/5 rounded-bl-[100px] z-0 pointer-events-none"></div>
-
-                            <h3 className="text-xl font-bold text-[#1b326b] mb-6 relative z-10">Karachi Head Office</h3>
-
-                            <div className="space-y-4 relative z-10 flex-1">
-                                <div className="flex items-start gap-3">
-                                    <MapPinIcon size={18} className="text-[#4E9CE4] shrink-0 mt-0.5" />
-                                    <p className="text-[14px] text-slate-600 font-medium">123, Main Road, City, Country</p>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <PhoneIcon size={18} className="text-[#4E9CE4] shrink-0" />
-                                    <p className="text-[14px] text-slate-600 font-medium">UAN: +00-000-XXXXXXX</p>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#4E9CE4] shrink-0"><path d="M7 22V2h10v20" /><path d="M12 22v-4" /><path d="M7 6h10" /><path d="M7 10h10" /><path d="M7 14h10" /><path d="M7 18h10" /></svg>
-                                    <p className="text-[14px] text-slate-600 font-medium">Fax: +92 (01) 2347-9876</p>
-                                </div>
-                            </div>
-                        </div>
-                    </FadeIn>
-
+                <div className="grid grid-cols-1 gap-6 w-full max-w-xl">
                     {/* Lahore Office */}
-                    <FadeIn delay={400} className="w-full">
+                    <FadeIn delay={300} className="w-full">
                         <div className="bg-white/80 backdrop-blur-md border border-[#CED6DE]/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-all h-full flex flex-col group relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#4E9CE4]/5 rounded-bl-[100px] z-0 pointer-events-none"></div>
 
@@ -217,31 +193,7 @@ const ContactPage = () => {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <MailIcon size={18} className="text-[#4E9CE4] shrink-0" />
-                                    <p className="text-[14px] text-slate-600 font-medium">Email: sales.techtronix@outlook.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </FadeIn>
-
-                    {/* Islamabad Office */}
-                    <FadeIn delay={500} className="w-full">
-                        <div className="bg-white/80 backdrop-blur-md border border-[#CED6DE]/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-all h-full flex flex-col group relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#4E9CE4]/5 rounded-bl-[100px] z-0 pointer-events-none"></div>
-
-                            <h3 className="text-xl font-bold text-[#1b326b] mb-6 relative z-10">Islamabad</h3>
-
-                            <div className="space-y-4 relative z-10 flex-1">
-                                <div className="flex items-start gap-3">
-                                    <MapPinIcon size={18} className="text-[#4E9CE4] shrink-0 mt-0.5" />
-                                    <p className="text-[14px] text-slate-600 font-medium">Preet Building, Park Road,<br />Islamabad, Pakistan</p>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <PhoneIcon size={18} className="text-[#4E9CE4] shrink-0" />
-                                    <p className="text-[14px] text-slate-600 font-medium">UAN: +92 (22) 111-527-527</p>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#4E9CE4] shrink-0"><path d="M7 22V2h10v20" /><path d="M12 22v-4" /><path d="M7 6h10" /><path d="M7 10h10" /><path d="M7 14h10" /><path d="M7 18h10" /></svg>
-                                    <p className="text-[14px] text-slate-600 font-medium">Fax: +92 (51) 9877-6701</p>
+                                    <p className="text-[14px] text-slate-600 font-medium">Email: sales@techtronix.org</p>
                                 </div>
                             </div>
                         </div>

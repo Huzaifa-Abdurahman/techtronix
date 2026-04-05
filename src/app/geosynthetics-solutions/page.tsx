@@ -137,14 +137,14 @@ const GeosyntheticsPage = () => {
                             </div>
                         </FadeIn>
 
-                        {/* Card 2: Geotextles */}
+                        {/* Card 2: Geotextiles */}
                         <FadeIn delay={200} className="w-full h-full">
                             <div className="bg-white/90 backdrop-blur-sm p-8 flex flex-col rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#CED6DE]/30 group hover:shadow-2xl hover:border-[#4E9CE4]/40 transition-all duration-500 h-full">
                                 <div className="mb-6 mx-auto w-16 h-16 bg-[#4E9CE4]/10 rounded-lg flex items-center justify-center group-hover:bg-[#4E9CE4] group-hover:scale-110 transition-all duration-500">
                                     <Layers size={32} strokeWidth={1.5} className="text-[#1b326b] group-hover:text-white transition-colors duration-500" />
                                 </div>
                                 <h3 className="text-[22px] text-center font-serif font-bold text-[#1b326b] mb-6 border-b border-[#CED6DE]/40 pb-4 group-hover:text-[#4E9CE4] transition-colors duration-300">
-                                    Geotextles
+                                    Geotextiles
                                 </h3>
                                 <ul className="space-y-4 flex-1">
                                     <li className="flex gap-3 text-[14px] text-slate-700 font-medium">
@@ -251,11 +251,11 @@ const GeosyntheticsPage = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto relative z-10 shrink-0">
-                        <a href="/contact" className="py-3 px-8 bg-[#0a1b42] hover:bg-[#4E9CE4] text-white font-medium text-[15px] transition-colors shadow-lg rounded-sm cursor-pointer whitespace-nowrap text-center border border-[#4E9CE4]/50 hover:border-transparent">
+                        <a href="/contact" className="py-3 px-6 bg-[#0a1b42] hover:bg-[#4E9CE4] text-white font-medium text-[14px] md:text-[15px] transition-colors shadow-lg rounded-sm cursor-pointer text-center border border-[#4E9CE4]/50 hover:border-transparent">
                             Contact Our Engineering Team
                         </a>
-                        <a href="/services" className="py-3 px-8 bg-white hover:bg-slate-100 text-[#1b326b] font-medium text-[15px] transition-colors shadow-lg rounded-sm cursor-pointer whitespace-nowrap text-center">
-                            Request Geosynthetics Services
+                        <a href="/services" className="py-3 px-6 bg-white hover:bg-slate-100 text-[#1b326b] font-medium text-[14px] md:text-[15px] transition-colors shadow-lg rounded-sm cursor-pointer text-center">
+                            Request Pre-Engineering Services
                         </a>
                     </div>
                 </FadeIn>

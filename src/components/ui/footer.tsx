@@ -15,21 +15,19 @@ export function Footer() {
 
                 {/* Left Brand Column */}
                 <div className="lg:col-span-4">
-                    <div className="bg-white p-3 md:p-4 rounded-sm inline-block mb-8 shadow-sm">
-                        <div className="flex items-center gap-3 md:gap-4">
-                            <div className="relative w-[38px] h-[38px] md:w-[46px] md:h-[46px] bg-[#1b326b] flex items-center justify-center shadow-sm overflow-hidden shrink-0">
-                                <span className="absolute left-[1px] top-[-3px] md:left-[2px] md:top-[-4px] text-white font-serif text-[32px] md:text-[40px] leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                                <span className="absolute left-[12px] top-[7px] md:left-[16px] md:top-[8px] text-white font-serif text-[32px] md:text-[40px] leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                            </div>
-                            <div className="flex flex-col items-start leading-[1.1] md:leading-[1.15]">
-                                <span className="text-[#1b326b] font-bold text-[18px] md:text-[20px] tracking-tight">Tech-Tronix</span>
-                                <span className="text-[#1b326b] font-bold text-[18px] md:text-[20px] tracking-tight">Solutions</span>
-                                <span className="text-[#1b326b] font-medium text-[10px] md:text-[11px] tracking-widest mt-0.5">(SMC-Pvt.Ltd.)</span>
-                            </div>
-                        </div>
+                    <div className="mb-8">
+                        <Link href="/">
+                            <Image
+                                src="/l2.png"
+                                alt="Tech-Tronix Solutions"
+                                width={200}
+                                height={70}
+                                className="h-20 w-auto object-contain"
+                            />
+                        </Link>
                     </div>
                     <p className="text-[14px] text-[#CED6DE] leading-relaxed mb-8 pr-4 font-medium">
-                        Global headquarters in Lahore. Regional offices in Karachi, Islamabad, and Multan. Leading the world in structural innovation.
+                        Global headquarters in Lahore. Leading the world in structural innovation and engineering excellence.
                     </p>
                     <div className="flex gap-4">
                         <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">

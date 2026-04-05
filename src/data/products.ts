@@ -71,5 +71,21 @@ export const products: Product[] = [
         description: "Expert drilling system for deep rock and soil penetration.",
         image: "/dth_drilling.png",
         fullDescription: "The Down-the-Hole (DTH) Drilling Rig is an industrial powerhouse formulated for blasting hole drilling, water well drilling, and deep ground penetration. Combining high impact energy with advanced rotary mechanisms, it ensures straight, precise holes even through the most challenging hard rock compositions."
+    },
+    {
+        id: "9",
+        name: "Ground Penetrating Radar (GPR)",
+        slug: "ground-penetrating-radar",
+        description: "Non-destructive, high-speed road scanning for pavement structure evaluation and subsurface defect detection.",
+        image: "/gpr_vehicle.jpg",
+        fullDescription: "Ground Penetrating Radar (GPR) for road scanning is a non-destructive, high-speed, and cost-effective method used to evaluate pavement structure, determine layer thicknesses, and identify subsurface defects such as voids, moisture, and delamination. Road-specific GPR systems use high-frequency antennas (1–2 GHz) mounted on vehicles, enabling data collection at traffic speeds up to 80 km/h without disrupting flow. Key applications include: Pavement Thickness Mapping (accurate measurement of asphalt, base, and subbase layers), Void & Cavity Detection (identifying dangerous air gaps beneath pavement), Moisture Detection (locating areas of high moisture susceptibility contributing to pavement failure), and Forensic Surveys (analyzing existing road conditions to determine causes of damage). The system uses specialized software like RADAN 7 or ROAD Doctor to interpret and map data. Antennas range from 1 GHz to 2 GHz for high-resolution imaging, and the vehicle-mounted, air-launched, horn-antenna systems allow for safe, rapid, non-contact data acquisition."
+    },
+    {
+        id: "10",
+        name: "Under Bridge Inspection Vehicle (Platform Type)",
+        slug: "under-bridge-inspection-vehicle",
+        description: "High-performance under-bridge access platform for bridge inspection, repair, maintenance, and structural assessment.",
+        image: "/bridge_inspection_vehicle.jpg",
+        fullDescription: "The Platform Type Bridge Inspection Vehicle is a high-performance under-bridge access platform designed for bridge inspection, repair, maintenance, and structural assessment. Ideal for highway bridges, flyovers, metro bridges, canal bridges, steel bridges, and concrete structures. Key Features: High-strength steel + aluminum structure, 600 kg heavy platform capacity, German NBB wireless remote, imported hydraulic system, video monitoring + intercom, emergency hydraulic retract, operating range -20°C to +50°C, and fast inspection speed of 15 m/min. Technical Specifications: Horizontal Reach 15m/16m/18m/22m (variable reach platforms available), Load Capacity 600 kg, Drive 6x4, Fuel Diesel, Emission Euro 5, Max Speed 90 km/h. Safety Features include hydraulic locking cylinders, emergency pump system, emergency stop switch, stabilizer cylinders, mechanical vertical truss lock, and safety circuit interlock. Applications: Bridge structural inspections, bearing inspections, crack surveys, under deck repair, cable bridge inspection, and night bridge maintenance."
     }
 ];

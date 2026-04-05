@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { Search, ChevronDown } from 'lucide-react';
-import Image from 'next/image';
+import { Search } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export function Navbar() {
@@ -15,44 +15,43 @@ export function Navbar() {
         { name: 'CONTACT', url: '/contact' },
         { name: 'SERVICES', url: '/services' },
         { name: 'PRODUCTS', url: '/products' },
+        { name: 'SUCCESS STORIES', url: '/success-stories' },
     ];
 
     return (
-        <header className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-5 text-white bg-[#1b326b]/95 backdrop-blur-sm">
+        <header className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-2 text-white bg-[#1b326b]/95 backdrop-blur-sm">
             <div className="flex items-center justify-between w-full">
-                {/* Left Side Navigation */}
-                <nav className="hidden md:flex items-center gap-8">
-                    <Link href="/about" className={`text-[13px] font-semibold tracking-[0.1em] ${pathname === '/about' ? 'text-[#4E9CE4]' : 'text-white'} hover:text-[#4E9CE4] transition-colors uppercase flex items-center gap-1.5`}>
-                        ABOUT <ChevronDown size={14} strokeWidth={2.5} />
-                    </Link>
-                    <Link href="/contact" className={`text-[13px] font-semibold tracking-[0.1em] ${pathname === '/contact' ? 'text-[#4E9CE4]' : 'text-white'} hover:text-[#4E9CE4] transition-colors uppercase flex items-center gap-1.5`}>
-                        CONTACT <ChevronDown size={14} strokeWidth={2.5} />
-                    </Link>
-                </nav>
-
-                {/* Center Logo */}
-                <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center bg-white px-3 py-1.5 transition-colors shadow-lg z-[110] rounded-sm gap-3 border border-[#1b326b]/10">
-                    <div className="relative w-[36px] h-[36px] bg-[#1b326b] flex items-center justify-center shadow-sm overflow-hidden shrink-0">
-                        <span className="absolute left-[1px] top-[-3px] text-white font-serif text-[32px] leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                        <span className="absolute left-[12px] top-[7px] text-white font-serif text-[32px] leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>T</span>
-                    </div>
-                    <div className="flex flex-col items-start leading-[1.1]">
-                        <span className="text-[#1b326b] font-bold text-[16px] tracking-tight">Tech-Tronix</span>
-                        <span className="text-[#1b326b] font-bold text-[16px] tracking-tight">Solutions</span>
-                        <span className="text-[#1b326b] font-medium text-[9px] tracking-widest">(SMC-Pvt.Ltd.)</span>
-                    </div>
+                {/* Left: Logo */}
+                <Link href="/" className="flex items-center z-[110] overflow-hidden" style={{ margin: '-2px 0' }}>
+                    <Image
+                        src="/l2.png"
+                        alt="Tech-Tronix Solutions"
+                        width={240}
+                        height={90}
+                        className="h-[90px] w-auto object-contain scale-110"
+                        priority
+                    />
                 </Link>
 
-                {/* Right Side Navigation */}
+                {/* Right: Nav links + Search */}
                 <div className="flex items-center gap-6 md:gap-8">
-                    <div className="hidden md:flex items-center gap-8">
+                    <nav className="hidden md:flex items-center gap-8">
+                        <Link href="/about" className={`text-[13px] font-semibold tracking-[0.1em] ${pathname === '/about' ? 'text-[#4E9CE4]' : 'text-white'} hover:text-[#4E9CE4] transition-colors uppercase`}>
+                            ABOUT
+                        </Link>
+                        <Link href="/contact" className={`text-[13px] font-semibold tracking-[0.1em] ${pathname === '/contact' ? 'text-[#4E9CE4]' : 'text-white'} hover:text-[#4E9CE4] transition-colors uppercase`}>
+                            CONTACT
+                        </Link>
                         <Link href="/services" className={`text-[13px] font-semibold tracking-[0.1em] ${pathname === '/services' ? 'text-[#4E9CE4]' : 'text-white'} hover:text-[#4E9CE4] transition-colors uppercase`}>
                             SERVICES
                         </Link>
                         <Link href="/products" className={`text-[13px] font-semibold tracking-[0.1em] ${pathname.startsWith('/products') ? 'text-[#4E9CE4]' : 'text-white'} hover:text-[#4E9CE4] transition-colors uppercase`}>
                             PRODUCTS
                         </Link>
-                    </div>
+                        <Link href="/success-stories" className={`text-[13px] font-semibold tracking-[0.1em] ${pathname === '/success-stories' ? 'text-[#4E9CE4]' : 'text-white'} hover:text-[#4E9CE4] transition-colors uppercase`}>
+                            SUCCESS STORIES
+                        </Link>
+                    </nav>
                     <button className="border border-white/60 p-1.5 rounded-sm hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-colors text-white hidden md:block">
                         <Search size={16} strokeWidth={2} />
                     </button>
