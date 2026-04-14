@@ -87,5 +87,45 @@ export const products: Product[] = [
         description: "High-performance under-bridge access platform for bridge inspection, repair, maintenance, and structural assessment.",
         image: "/bridge_inspection_vehicle.jpg",
         fullDescription: "The Platform Type Bridge Inspection Vehicle is a high-performance under-bridge access platform designed for bridge inspection, repair, maintenance, and structural assessment. Ideal for highway bridges, flyovers, metro bridges, canal bridges, steel bridges, and concrete structures. Key Features: High-strength steel + aluminum structure, 600 kg heavy platform capacity, German NBB wireless remote, imported hydraulic system, video monitoring + intercom, emergency hydraulic retract, operating range -20°C to +50°C, and fast inspection speed of 15 m/min. Technical Specifications: Horizontal Reach 15m/16m/18m/22m (variable reach platforms available), Load Capacity 600 kg, Drive 6x4, Fuel Diesel, Emission Euro 5, Max Speed 90 km/h. Safety Features include hydraulic locking cylinders, emergency pump system, emergency stop switch, stabilizer cylinders, mechanical vertical truss lock, and safety circuit interlock. Applications: Bridge structural inspections, bearing inspections, crack surveys, under deck repair, cable bridge inspection, and night bridge maintenance."
+    },
+    {
+        id: "11",
+        name: "Gujjar Khan NMC Underpass",
+        slug: "gujjar-khan-nmc-underpass",
+        description: "Complete end-to-end underpass construction project for BSM Developers.",
+        image: "/Gujjar Khan NMC Underpass.JPG",
+        fullDescription: "Client: BSM Developers. Scope: Complete end-to-end project. Included: Full construction of underpass, Site supervision and quality control, Supply of geogrid for soil stabilization and reinforcement. Impact: Delivered a durable, safe, and well-executed underpass infrastructure solution."
+    },
+    {
+        id: "12",
+        name: "Fast Falling Weight Deflectometer (FWD)",
+        slug: "fast-falling-weight-deflectometer",
+        description: "Non-destructive testing to measure pavement deflection and calculate structural capacity.",
+        image: "/Supply, Installation & Training of Fast Falling Weight Deflectometer (FWD).JPG",
+        fullDescription: "Project: Supply, Installation & Training of Fast Falling Weight Deflectometer (FWD). Client: KPK RAMS (Road Assets Management System, Khyber Pakhtunkhwa). Purpose: Non-destructive testing to measure pavement deflection and calculate structural capacity. Application: Road network evaluation, overlay design, and quality control. Impact: Enabled data-driven pavement maintenance strategies for KPK road assets."
+    },
+    {
+        id: "13",
+        name: "Biogas Flare System & Wastewater Treatment System",
+        slug: "biogas-flare-wastewater-treatment-ruda",
+        description: "Critical environmental systems for landfill revitalization.",
+        image: "/Supply of Biogas Flare System & Wastewater Treatment System – RUDA.JPG",
+        fullDescription: "Project: Supply of Biogas Flare System & Wastewater Treatment System – RUDA. Supplied two critical environmental systems to the Ravi Urban Development Authority (RUDA) for the Revitalization of Mehmood Booty Landfill Site. Biogas Flare System – Provided for safe combustion of landfill biogas, enabling odor control and greenhouse gas reduction. Wastewater Treatment System – Supplied to treat leachate and contaminated water from the landfill, ensuring safe discharge or reuse. Together, these solutions supported RUDA's landfill revitalization efforts through compliant biogas management and effective wastewater treatment."
+    },
+    {
+        id: "14",
+        name: "Dual Fired Burner (Oil/Biogas)",
+        slug: "dual-fired-burner",
+        description: "Supply of Dual Fired Burner (Oil/Biogas) for 20 TPH Boiler.",
+        image: "/Crystalline Chemical Industries.JPG",
+        fullDescription: "Project: Supply of Dual Fired Burner (Oil/Biogas) for 20 TPH Boiler. Client: Crystalline Chemical Industries. Scope: Supply, installation, and operation training. Included Components: Complete system including Burner Management System (BMS) and gas trains. Outcome: Enables efficient boiler operation using either oil or biogas, providing fuel flexibility, energy efficiency, and operational safety."
+    },
+    {
+        id: "15",
+        name: "Profilograph",
+        slug: "profilograph",
+        description: "Measuring road surface smoothness and ride quality.",
+        image: "/Supply, Installation & Training of Profilograph.JPG",
+        fullDescription: "Project: Supply, Installation & Training of Profilograph. Client: National Highway Authority (NHA). Equipment: Profilograph. Purpose: Measuring road surface smoothness and ride quality. Application: Quality assurance and acceptance testing of newly constructed or rehabilitated highways. Impact: Supports NHA in ensuring roads meet required profile standards."
     }
 ];

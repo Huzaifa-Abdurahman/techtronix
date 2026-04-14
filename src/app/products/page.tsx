@@ -39,8 +39,8 @@ const ProductsPage = () => {
     return (
         <div className="flex-1 bg-[#eaf2fb] text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white flex flex-col relative mt-0">
             {/* Global Background Layer */}
-            <div className="fixed inset-0 z-0 pointer-events-none opacity-40 mix-blend-multiply">
-                <Image src="/i7.jpg" alt="Background" fill className="object-cover" />
+            <div className="fixed inset-0 z-0 pointer-events-none opacity-90 mix-blend-multiply">
+                <Image src="/product-page.jpg" alt="Background" fill className="object-cover" />
                 <div className="absolute inset-0 bg-[#1b326b] mix-blend-color opacity-70"></div>
             </div>
 
@@ -48,7 +48,7 @@ const ProductsPage = () => {
             <div className="relative w-full pt-32 pb-24 md:pt-44 md:pb-32 px-6 md:px-12 mx-auto min-h-[50vh] flex flex-col justify-center">
                 <div
                     className="absolute inset-0 z-[1] bg-cover bg-fixed bg-center"
-                    style={{ backgroundImage: "url('/eng.jpg')" }}
+                    style={{ backgroundImage: "url('/pro.jpg')" }}
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0a1b42]/90 via-[#0a1b42]/50 to-transparent"></div>
                 </div>
