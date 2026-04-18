@@ -35,6 +35,60 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
     );
 }
 
+const ProductCard = ({ product }: { product: any }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const hasMultipleImages = product.images && product.images.length > 0;
+    const images = hasMultipleImages ? product.images : [product.image];
+
+    useEffect(() => {
+        if (!hasMultipleImages || images.length <= 1) return;
+
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % images.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [hasMultipleImages, images.length]);
+
+    return (
+        <Link href={`/products/${product.slug}`} className="bg-white/80 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/50 flex flex-col h-full group/card hover:shadow-2xl hover:border-[#4E9CE4]/40 hover:-translate-y-2 transition-all duration-500">
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                {images.map((img: string, idx: number) => (
+                    <div
+                        key={idx}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                            }`}
+                    >
+                        <Image
+                            src={img}
+                            alt={product.name}
+                            fill
+                            className="object-cover group-hover/card:scale-110 transition-transform duration-700 ease-in-out"
+                        />
+                    </div>
+                ))}
+                <div className="absolute inset-0 bg-[#1b326b]/5 group-hover/card:bg-transparent transition-colors duration-500"></div>
+            </div>
+            <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-8 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0 group-hover/card:bg-[#4E9CE4] group-hover/card:text-white transition-colors duration-300">
+                        <Settings size={16} strokeWidth={2} className="text-[#1b326b] group-hover/card:text-white transition-colors" />
+                    </div>
+                    <h3 className="text-[19px] font-sans font-bold text-[#1b326b] leading-tight group-hover/card:text-[#4E9CE4] transition-colors duration-300 line-clamp-2">
+                        {product.name}
+                    </h3>
+                </div>
+                <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
+                    {product.description}
+                </p>
+                <div className="mt-auto inline-flex items-center gap-2 text-[14px] font-bold text-[#1b326b] group-hover/card:text-[#4E9CE4] transition-colors uppercase tracking-wider">
+                    View Details <ArrowRight size={16} className="group-hover/card:translate-x-1.5 transition-transform" />
+                </div>
+            </div>
+        </Link>
+    );
+};
+
 const ProductsPage = () => {
     return (
         <div className="flex-1 bg-[#eaf2fb] text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white flex flex-col relative mt-0">
@@ -86,30 +140,9 @@ const ProductsPage = () => {
                 </FadeIn>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {products.map((product, idx) => (
+                    {products.filter(p => !['1', '2', '3', '4', '5', '6', '7', '8', '11'].includes(p.id)).map((product, idx) => (
                         <FadeIn key={product.id} delay={100 + (idx * 50)} className="w-full">
-                            <Link href={`/products/${product.slug}`} className="bg-white/80 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/50 flex flex-col h-full group/card hover:shadow-2xl hover:border-[#4E9CE4]/40 hover:-translate-y-2 transition-all duration-500">
-                                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
-                                    <Image src={product.image} alt={product.name} fill className="object-cover group-hover/card:scale-110 transition-transform duration-700 ease-in-out" />
-                                    <div className="absolute inset-0 bg-[#1b326b]/5 group-hover/card:bg-transparent transition-colors duration-500"></div>
-                                </div>
-                                <div className="p-6 flex flex-col flex-1">
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <div className="w-8 h-8 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0 group-hover/card:bg-[#4E9CE4] group-hover/card:text-white transition-colors duration-300">
-                                            <Settings size={16} strokeWidth={2} className="text-[#1b326b] group-hover/card:text-white transition-colors" />
-                                        </div>
-                                        <h3 className="text-[19px] font-sans font-bold text-[#1b326b] leading-tight group-hover/card:text-[#4E9CE4] transition-colors duration-300 line-clamp-2">
-                                            {product.name}
-                                        </h3>
-                                    </div>
-                                    <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                        {product.description}
-                                    </p>
-                                    <div className="mt-auto inline-flex items-center gap-2 text-[14px] font-bold text-[#1b326b] group-hover/card:text-[#4E9CE4] transition-colors uppercase tracking-wider">
-                                        View Details <ArrowRight size={16} className="group-hover/card:translate-x-1.5 transition-transform" />
-                                    </div>
-                                </div>
-                            </Link>
+                            <ProductCard product={product} />
                         </FadeIn>
                     ))}
                 </div>

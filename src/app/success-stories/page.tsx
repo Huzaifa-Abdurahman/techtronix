@@ -332,6 +332,54 @@ const infrastructureProjects = [
     }
 ];
 
+const projectHighlights = [
+    {
+        title: "Biogas Flare & Wastewater Treatment System",
+        slug: "biogas-flare-wastewater-treatment-ruda",
+        images: ["/Supply of Biogas Flare System & Wastewater Treatment System – RUDA.JPG"],
+        details: [
+            { label: "Client", value: "Ravi Urban Development Authority (RUDA)" },
+            { label: "System 1", value: "Biogas Flare System" },
+            { label: "System 2", value: "Wastewater Treatment System" },
+            { label: "Impact", value: "Landfill Revitalization & Odor Control" }
+        ]
+    },
+    {
+        title: "Dual Fired Burner (Oil/Biogas) System",
+        slug: "dual-fired-burner",
+        images: ["/Crystalline Chemical Industries.JPG"],
+        details: [
+            { label: "Client", value: "Crystalline Chemical Industries" },
+            { label: "Capacity", value: "20 TPH Boiler" },
+            { label: "Scope", value: "Supply, Installation & Training" },
+            { label: "Outcome", value: "Fuel Flexibility & Efficiency" }
+        ]
+    },
+    {
+        title: "Profilograph Installation & Training",
+        slug: "profilograph",
+        images: ["/Supply, Installation & Training of Profilograph.JPG"],
+        details: [
+            { label: "Client", value: "National Highway Authority (NHA)" },
+            { label: "Equipment", value: "Profilograph" },
+            { label: "Purpose", value: "Measuring Road Smoothness" },
+            { label: "Scale", value: "National Highways & Rehabilitation" }
+        ]
+    },
+    {
+        title: "Fast Falling Weight Deflectometer (FWD)",
+        slug: "fast-falling-weight-deflectometer",
+        images: ["/Supply, Installation & Training of Fast Falling Weight Deflectometer (FWD).JPG"],
+        details: [
+            { label: "Client", value: "Road Assets Management System (RAMS), KPK" },
+            { label: "Method", value: "Non-Destructive Testing (NDT)" },
+            { label: "Application", value: "Pavement Deflection Measurement" },
+            { label: "Benefit", value: "Data-Driven Maintenance Strategy" }
+        ]
+    }
+];
+
+
 export default function SuccessStoriesPage() {
     const [activeTab, setActiveTab] = useState(0);
 
@@ -446,6 +494,43 @@ export default function SuccessStoriesPage() {
                                                 </div>
                                             ))}
                                         </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </FadeIn>
+                </section>
+ 
+                {/* Project Highlights Section */}
+                <section>
+                    <FadeIn delay={150}>
+                        <div className="mb-12 border-b border-[#d6e0ea] pb-6">
+                            <span className="text-sm font-bold uppercase tracking-widest text-[#4E9CE4]">Success Stories</span>
+                            <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#1b326b] md:text-4xl">Project Highlights & Successes</h2>
+                            <p className="mt-4 text-slate-600 max-w-3xl text-lg">Exploring our recent equipment deployments and technical solutions that have empowered major national and industrial organizations.</p>
+                        </div>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                            {projectHighlights.map((project, idx) => (
+                                <div key={idx} className="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_rgba(27,50,107,0.08)] border border-[#e5edf5] hover:shadow-[0_20px_60px_rgba(27,50,107,0.12)] transition-all duration-500 hover:-translate-y-1">
+                                    <ImageCarousel images={project.images} title={project.title} />
+                                    <div className="p-8 md:p-10 bg-gradient-to-b from-white to-[#fcfdfe]">
+                                        <h3 className="text-[26px] font-bold text-[#1b326b] mb-8">{project.title}</h3>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 mb-10">
+                                            {project.details.map((detail, dIdx) => (
+                                                <div key={dIdx} className="border-l-2 border-[#4E9CE4] pl-4">
+                                                    <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">{detail.label}</p>
+                                                    <p className="mt-1 text-sm font-semibold text-slate-800">{detail.value}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <a 
+                                            href={`/products/${project.slug}`}
+                                            className="inline-flex items-center gap-2 text-[#1b326b] font-bold text-[15px] group/link hover:text-[#4E9CE4] transition-colors"
+                                        >
+                                            View Project Details
+                                            <ArrowRight size={18} className="translate-x-0 group-hover/link:translate-x-2 transition-transform duration-300" />
+                                        </a>
                                     </div>
                                 </div>
                             ))}

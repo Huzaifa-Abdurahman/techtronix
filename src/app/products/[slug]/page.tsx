@@ -35,6 +35,44 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
     );
 }
 
+const AutoCarousel = ({ images, name }: { images: string[], name: string }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [images]);
+
+    return (
+        <div className="relative w-full h-full">
+            {images.map((img, idx) => (
+                <div
+                    key={idx}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+                >
+                    <Image
+                        src={img}
+                        alt={`${name} - Image ${idx + 1}`}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            ))}
+            {/* Carousel Indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+                {images.map((_, idx) => (
+                    <div
+                        key={idx}
+                        className={`h-1.5 transition-all duration-300 rounded-full ${idx === currentIndex ? 'w-6 bg-white' : 'w-1.5 bg-white/50'}`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
+
 export default function ProductDetailPage() {
     const params = useParams();
     const router = useRouter();
@@ -69,16 +107,20 @@ export default function ProductDetailPage() {
 
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/50 overflow-hidden flex flex-col lg:flex-row">
 
-                    {/* Left: Product Image */}
+                    {/* Left: Product Image / Carousel */}
                     <div className="lg:w-1/2 relative bg-slate-100 min-h-[400px] lg:min-h-[auto] flex items-center justify-center p-8 lg:p-12 overflow-hidden group">
                         <div className="absolute inset-0 bg-[#1b326b]/5 group-hover:bg-[#1b326b]/0 transition-colors duration-500 z-10"></div>
                         <div className="relative w-full aspect-square md:aspect-[4/3] rounded-lg overflow-hidden shadow-2xl border border-white z-20">
-                            <Image
-                                src={product.image}
-                                alt={product.name}
-                                fill
-                                className="object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
-                            />
+                            {product.images && product.images.length > 1 ? (
+                                <AutoCarousel images={product.images} name={product.name} />
+                            ) : (
+                                <Image
+                                    src={product.image}
+                                    alt={product.name}
+                                    fill
+                                    className="object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
+                                />
+                            )}
                         </div>
                     </div>
 

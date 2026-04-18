@@ -4,6 +4,7 @@ export interface Product {
     slug: string;
     description: string;
     image: string;
+    images?: string[];
     fullDescription: string;
 }
 
@@ -100,32 +101,102 @@ export const products: Product[] = [
         id: "12",
         name: "Fast Falling Weight Deflectometer (FWD)",
         slug: "fast-falling-weight-deflectometer",
-        description: "Non-destructive testing to measure pavement deflection and calculate structural capacity.",
+        description: "High-precision non-destructive testing for pavement structural evaluation.",
         image: "/Supply, Installation & Training of Fast Falling Weight Deflectometer (FWD).JPG",
-        fullDescription: "Project: Supply, Installation & Training of Fast Falling Weight Deflectometer (FWD). Client: KPK RAMS (Road Assets Management System, Khyber Pakhtunkhwa). Purpose: Non-destructive testing to measure pavement deflection and calculate structural capacity. Application: Road network evaluation, overlay design, and quality control. Impact: Enabled data-driven pavement maintenance strategies for KPK road assets."
+        fullDescription: "The Fast Falling Weight Deflectometer (FWD) is a premier non-destructive testing solution designed to accurately measure pavement deflection and evaluate the structural capacity of road networks. Engineered for high-speed data acquisition, it provides critical insights for overlay design, quality control, and long-term infrastructure management. Ideal for road authorities and highway departments, this unit enables data-driven maintenance strategies that extend the lifespan of pavement assets."
     },
     {
         id: "13",
         name: "Biogas Flare System & Wastewater Treatment System",
         slug: "biogas-flare-wastewater-treatment-ruda",
-        description: "Critical environmental systems for landfill revitalization.",
+        description: "Complete environmental solution for gas management and leachate treatment.",
         image: "/Supply of Biogas Flare System & Wastewater Treatment System – RUDA.JPG",
-        fullDescription: "Project: Supply of Biogas Flare System & Wastewater Treatment System – RUDA. Supplied two critical environmental systems to the Ravi Urban Development Authority (RUDA) for the Revitalization of Mehmood Booty Landfill Site. Biogas Flare System – Provided for safe combustion of landfill biogas, enabling odor control and greenhouse gas reduction. Wastewater Treatment System – Supplied to treat leachate and contaminated water from the landfill, ensuring safe discharge or reuse. Together, these solutions supported RUDA's landfill revitalization efforts through compliant biogas management and effective wastewater treatment."
+        fullDescription: "Our advanced Biogas Flare and Wastewater Treatment System provides a comprehensive environmental solution for landfill management and site revitalization. The Biogas Flare unit ensures the safe, efficient combustion of landfill gases, significantly reducing odors and greenhouse gas emissions. Integrated with a robust Wastewater Treatment module, the system effectively processes leachate and contaminated water, ensuring environmentally compliant discharge or reuse. This dual-action system is essential for sustainable waste management and environmental protection."
     },
     {
         id: "14",
         name: "Dual Fired Burner (Oil/Biogas)",
         slug: "dual-fired-burner",
-        description: "Supply of Dual Fired Burner (Oil/Biogas) for 20 TPH Boiler.",
+        description: "Versatile industrial burner providing unmatched fuel flexibility and efficiency.",
         image: "/Crystalline Chemical Industries.JPG",
-        fullDescription: "Project: Supply of Dual Fired Burner (Oil/Biogas) for 20 TPH Boiler. Client: Crystalline Chemical Industries. Scope: Supply, installation, and operation training. Included Components: Complete system including Burner Management System (BMS) and gas trains. Outcome: Enables efficient boiler operation using either oil or biogas, providing fuel flexibility, energy efficiency, and operational safety."
+        fullDescription: "The Dual Fired Burner is a high-efficiency combustion system designed specifically for large-scale boiler operations. Engineered to support both oil and biogas, this versatile burner provides unmatched fuel flexibility and energy efficiency for industrial applications. Each system comes complete with an advanced Burner Management System (BMS) and precision gas trains, ensuring maximum operational safety and control. Whether upgrading existing infrastructure or installing new thermal plants, our dual-fired solution delivers reliable, sustainable power."
     },
     {
         id: "15",
         name: "Profilograph",
         slug: "profilograph",
-        description: "Measuring road surface smoothness and ride quality.",
+        description: "Precision instrumentation for measuring road surface smoothness.",
         image: "/Supply, Installation & Training of Profilograph.JPG",
-        fullDescription: "Project: Supply, Installation & Training of Profilograph. Client: National Highway Authority (NHA). Equipment: Profilograph. Purpose: Measuring road surface smoothness and ride quality. Application: Quality assurance and acceptance testing of newly constructed or rehabilitated highways. Impact: Supports NHA in ensuring roads meet required profile standards."
+        fullDescription: "The Profilograph is an essential precision instrument for measuring road surface smoothness and ride quality with scientific accuracy. Designed for high-performance quality assurance, it allows engineers to conduct acceptance testing on newly constructed or rehabilitated highways with confidence. By providing detailed profile maps, it ensures that pavements meet the most stringent national standards for rideability and structural uniformity. It is the preferred choice for highway authorities and construction consultants focused on infrastructure excellence."
+    },
+    {
+        id: "16",
+        name: "Geogrid",
+        slug: "geogrid",
+        description: "High-strength geosynthetic material for soil and aggregate reinforcement.",
+        image: "/geogrid-1.JPG",
+        images: ["/geogrid-1.JPG", "/geogrid-2.JPG", "/geogrid-3.JPG", "/geogrid-4.JPG"],
+        fullDescription: `
+Geogrid is a high-strength geosynthetic material with an open grid-like structure used to reinforce soils and aggregates. It plays a vital role in civil, geotechnical, and transportation engineering, especially in areas with soft or weak subgrades. Made from durable polymers such as polypropylene, polyester, or HDPE, geogrids are designed to interlock with soil or aggregate particles, improving load distribution, reducing settlement, and increasing overall structural integrity.
+
+Monoaxial Geogrid
+Monoaxial geogrids are produced from high-strength polymers such as HDPE or polyester, which are stretched in a single direction to maximize tensile performance. These geogrids are specifically engineered for soil reinforcement in wall and slope applications where forces act predominantly along one axis.
+
+Key Benefits:
+• High tensile capacity in the machine direction: Designed to resist tension along a single axis, monoaxial geogrids are ideal for retaining walls and slopes.
+• Enables steep slope and vertical wall construction: Allows for safe construction of near-vertical walls or steep embankments.
+• Cost-effective alternative: Requires fewer materials and less labor than traditional concrete systems.
+• Long-term resistance: Excellent resistance to chemical and biological degradation, extreme pH levels, and biological attack.
+
+Typical Applications:
+• Mechanically Stabilized Earth (MSE) walls
+• Steep slopes and embankments
+• Bridge abutment support structures
+• Landfill berms and vertical expansion zones
+
+Biaxial Geogrid
+Biaxial geogrids are manufactured through a process of extrusion, punching, and stretching polypropylene sheets. The resulting grid structure provides balanced strength in both directions, making it highly effective for subgrade stabilization and even load distribution.
+
+Key Benefits:
+• Improves load-bearing capacity: Stabilizes weak subgrades by distributing loads evenly.
+• Reduces thickness requirements: Required bearing capacity can be achieved using a thinner layer of base material.
+• Controls rutting and differential settlement: Prevents aggregate displacement under repeated traffic loads.
+• Enhances performance: Contributes to longer-lasting pavements with less maintenance.
+
+Typical Applications:
+• Road and highway base reinforcement
+• Parking lots and airport taxiways
+• Temporary site access roads and working platforms
+• Railway ballast reinforcement
+
+Key Functions of Geogrids:
+• Reinforcement – Increases tensile strength of soil.
+• Stabilization – Locks aggregates in place.
+• Load Distribution – Spreads applied loads over a larger area.
+• Separation & Erosion Control – Prevents material mixing when used with geotextiles.
+        `
+    },
+    {
+        id: "17",
+        name: "Geonet",
+        slug: "geonet",
+        description: "Three-dimensional grid-like material for high-capacity liquid and gas drainage.",
+        image: "/geonet-1.JPG",
+        images: ["/geonet-1.JPG", "/geonet-2.JPG", "/geonet-3.JPG"],
+        fullDescription: `
+Geonets are three-dimensional, grid-like polymeric geosynthetic materials designed for high-capacity in-plane drainage of liquids and gases. Manufactured primarily from high-density polyethylene (HDPE), they consist of parallel, intersecting ribs that form open, conductive channels. These products are essential in landfill, mining, and construction projects for drainage, soil erosion control, and reinforcement.
+
+Key Features and Functions:
+• Drainage – Facilitates the lateral flow of water or gas, such as in leachate collection systems.
+• Structure – Features bi-planar or tri-planar rib configurations that provide excellent compressive strength and high flow rates.
+• Applications – Commonly used in landfill liners, heap leach pads in mining, road base stabilization, retaining wall drainage, and tunnel waterproofing.
+• Geocomposites – Geonets are often combined with nonwoven geotextiles to form a geocomposite, offering both filtration (to prevent clogging) and high-flow drainage in a single product.
+• Materials – Typically made from HDPE or polypropylene, providing high chemical resistance and long-term durability in harsh environments.
+
+Types of Geonets:
+• Biplanar Geonet: Standard two-dimensional rib structure for reliable flow.
+• Triplanar Geonet: Advanced three-dimensional structure for superior flow capacity and compression resistance.
+• Geonet Composites: Combined with geotextiles for integrated filtration and drainage.
+        `
     }
 ];
