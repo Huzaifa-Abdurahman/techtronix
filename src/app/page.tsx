@@ -51,6 +51,113 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
     );
 }
 
+const coreServices = [
+    {
+        title: "HIGH-WAYS",
+        description: "Comprehensive solutions for highway design and safety.",
+        icon: Car,
+        items: [
+            "Profilometer",
+            "Toll system",
+            "GPR",
+            "UBIT",
+            "AI based road conditions survey equipment",
+            "Lab testing equipment",
+            "Laser Crack Measurement Survey",
+            "ITS intelligent transportation systems."
+        ]
+    },
+    {
+        title: "GEO-SYNTHETICS",
+        description: "Advanced non-destructive testing & geo-synthetics steps services.",
+        icon: Shield,
+        items: [
+            "Geogrids",
+            "Geotextiles",
+            "Geocells",
+            "Geotubes",
+            "Geobags",
+            "Geomembrane"
+        ]
+    },
+    {
+        title: "WASTE WATER",
+        description: "Residual & wastewater treatment systems for efficient management.",
+        icon: Activity,
+        items: [
+            "Landfill Design & Engineering",
+            "Leachate Treatment Systems",
+            "Flare Systems for Gas Management",
+            "Containerized Waste Water Treatment",
+            "Leachate Pumping & Collection"
+        ]
+    },
+    {
+        title: "ENGINEERING SERVICES",
+        description: "Engineering tools and tech for safe and optimal structural design.",
+        icon: Settings,
+        items: [
+            "BIM Design",
+            "Project planning services",
+            "Construction management service",
+            "Infrastructure design",
+            "EPC services"
+        ]
+    },
+    {
+        title: "GENERAL",
+        description: "Specialized general engineering solutions and equipment.",
+        icon: FileText,
+        items: [
+            "Special Engineering Services solutions",
+            "Including different equipment"
+        ]
+    }
+];
+
+interface ServiceCardProps {
+    title: string;
+    description: string;
+    items: string[];
+    icon: any;
+}
+
+const ServiceCard = ({ title, description, items, icon: Icon }: ServiceCardProps) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div 
+            className="bg-white rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-[#CED6DE]/30 overflow-hidden group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-fit cursor-pointer" 
+            onClick={() => setIsOpen(!isOpen)}
+        >
+            <div className="p-8 flex flex-col items-center text-center">
+                <div className="w-[75px] h-[75px] rounded-[18px] bg-[#1b326b] flex items-center justify-center text-white mb-6 group-hover:scale-105 transition-transform duration-300 shadow-md">
+                    {Icon && <Icon size={34} strokeWidth={1.5} />}
+                </div>
+                <h3 className="text-[20px] font-bold text-[#1b1b1b] mb-3 leading-[1.3] px-2">{title}</h3>
+                <p className="text-[14px] text-slate-500 leading-relaxed">{description}</p>
+                <div className="mt-6 text-[#4E9CE4]">
+                    <ChevronDown size={20} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                </div>
+            </div>
+            
+            <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                <div className="p-6 pt-0 bg-white">
+                    <div className="h-[1px] w-full bg-[#CED6DE]/30 mb-4"></div>
+                    <ul className="space-y-3">
+                        {items.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-3">
+                                <ArrowRight size={16} className="text-[#4E9CE4] mt-1 shrink-0" />
+                                <span className="text-[14px] text-slate-600 font-medium leading-snug text-left">{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const App = () => {
     return (
         <div className="flex-1 bg-black text-slate-900 font-sans selection:bg-[#4E9CE4] selection:text-white pb-0">
@@ -103,185 +210,86 @@ const App = () => {
                     className="[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)] inset-0 h-full w-full skew-y-12"
                 />
 
-                {/* --- CORE SERVICES SECTION AS NEWS/INSIGHTS LAYOUT --- */}
-                <section className="max-w-[1500px] mx-auto px-6 md:px-12 py-24 md:py-32 bg-white">
-                    <FadeIn className="mb-16">
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1b1b1b] tracking-tight">Our Core Engineering Services</h2>
-                        <div className="w-24 h-1.5 bg-[#4E9CE4] mt-6"></div>
+                {/* --- CORE SERVICES SECTION --- */}
+                <section className="max-w-[1500px] mx-auto px-6 md:px-12 py-24 md:py-32 bg-[#f8fafc] relative z-10">
+                    <FadeIn className="mb-16 text-center">
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#1b1b1b] tracking-tight inline-block relative pb-4">
+                            Our Core Engineering Services
+                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[3px] bg-[#1b326b] rounded-full"></span>
+                        </h2>
                     </FadeIn>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {/* Large Card (Left) */}
-                        <FadeIn delay={100} className="lg:col-span-2 group cursor-pointer flex flex-col pr-0 lg:pr-8">
-                            <div className="relative w-full aspect-[4/3] min-h-[300px] mb-6 rounded-lg overflow-hidden bg-[#B0C7E3]/20 shadow-sm border border-[#CED6DE]/50">
-                                <Image src="/eng.jpg" alt="Engineering Solutions" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                                <div className="absolute inset-0 bg-[#4E9CE4]/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                            </div>
-                            <h3 className="text-2xl md:text-3xl font-serif font-bold text-slate-800 leading-snug mb-4 group-hover:text-[#4E9CE4] transition-colors">
-                                Engineering Solutions for the Modern World
-                            </h3>
-                            <div className="mt-auto pt-4 flex justify-start">
-                                <div className="w-14 h-14 rounded-full bg-[#4E9CE4] flex items-center justify-center text-white shadow-lg group-hover:bg-[#1b326b] group-hover:scale-105 transition-all duration-300">
-                                    <ArrowRight size={24} className="-rotate-45" />
-                                </div>
-                            </div>
-                        </FadeIn>
-
-                        {/* Right column 1 */}
-                        <FadeIn delay={200} className="flex flex-col gap-10">
-                            {/* Card 2 */}
-                            <div className="group cursor-pointer flex flex-col h-full">
-                                <div className="relative w-full aspect-[16/9] min-h-[160px] mb-4 rounded-lg overflow-hidden bg-[#B0C7E3]/20 shadow-sm border border-[#CED6DE]/50">
-                                    <Image src="/highway.jpg" alt="Highway & Transportation" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                                    <div className="absolute inset-0 bg-[#4E9CE4]/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                                </div>
-                                <h3 className="text-[17px] font-bold font-serif text-slate-800 leading-snug mb-3 group-hover:text-[#4E9CE4] transition-colors">
-                                    Highway & Transportation Network Design
-                                </h3>
-                                <div className="mt-auto flex justify-start">
-                                    <div className="w-12 h-12 rounded-full bg-[#4E9CE4] flex items-center justify-center text-white shadow-md group-hover:bg-[#1b326b] group-hover:scale-105 transition-all duration-300">
-                                        <ArrowRight size={20} className="-rotate-45" />
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Card 3 */}
-                            <div className="group cursor-pointer flex flex-col h-full">
-                                <div className="relative w-full aspect-[16/9] min-h-[160px] mb-4 rounded-lg overflow-hidden bg-[#B0C7E3]/20 shadow-sm border border-[#CED6DE]/50">
-                                    <Image src="/ndt.png" alt="Geo Synthetics" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                                    <div className="absolute inset-0 bg-[#4E9CE4]/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                                </div>
-                                <h3 className="text-[17px] font-bold font-serif text-slate-800 leading-snug mb-3 group-hover:text-[#4E9CE4] transition-colors">
-                                    Advanced NDT & Geo Synthetics Solutions
-                                </h3>
-                                <div className="mt-auto flex justify-start">
-                                    <div className="w-12 h-12 rounded-full bg-[#4E9CE4] flex items-center justify-center text-white shadow-md group-hover:bg-[#1b326b] group-hover:scale-105 transition-all duration-300">
-                                        <ArrowRight size={20} className="-rotate-45" />
-                                    </div>
-                                </div>
-                            </div>
-                        </FadeIn>
-
-                        {/* Right column 2 */}
-                        <FadeIn delay={300} className="flex flex-col gap-10">
-                            {/* Card 4 */}
-                            <div className="group cursor-pointer flex flex-col h-full">
-                                <div className="relative w-full aspect-[16/9] min-h-[160px] mb-4 rounded-lg overflow-hidden bg-[#B0C7E3]/20 shadow-sm border border-[#CED6DE]/50">
-                                    <Image src="/roi.jpg" alt="RoM's & Busting System" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                                    <div className="absolute inset-0 bg-[#4E9CE4]/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                                </div>
-                                <h3 className="text-[17px] font-bold font-serif text-slate-800 leading-snug mb-3 group-hover:text-[#4E9CE4] transition-colors">
-                                    RoM's & Residual Busting System
-                                </h3>
-                                <div className="mt-auto flex justify-start">
-                                    <div className="w-12 h-12 rounded-full bg-[#4E9CE4] flex items-center justify-center text-white shadow-md group-hover:bg-[#1b326b] group-hover:scale-105 transition-all duration-300">
-                                        <ArrowRight size={20} className="-rotate-45" />
-                                    </div>
-                                </div>
-                            </div>
-                        </FadeIn>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 xl:gap-8 items-start">
+                        {coreServices.map((service, index) => (
+                            <FadeIn key={index} delay={index * 100} className="w-full">
+                                <ServiceCard 
+                                    title={service.title} 
+                                    description={service.description}
+                                    items={service.items} 
+                                    icon={service.icon} 
+                                />
+                            </FadeIn>
+                        ))}
                     </div>
                 </section>
 
-                {/* --- STATS SECTION (BALLS) --- */}
-                <section className="bg-[#f8fafc] py-24 mb-10 overflow-hidden">
-                    <div className="max-w-[1400px] mx-auto px-10">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                            {/* Left side: The Balls */}
-                            <FadeIn className="relative h-[450px] w-full flex items-center justify-center">
-                                {/* 1. Top Left Blue Shade */}
-                                <div className="absolute top-0 right-1/2 w-48 h-48 bg-[#B0C7E3] rounded-[100%] flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(78,156,228,0.15)] z-20 hover:scale-105 transition-transform duration-300 text-slate-800">
-                                    <span className="text-5xl font-black tracking-tighter">150+</span>
-                                    <span className="text-[10px] font-bold text-slate-600 mt-2 tracking-widest uppercase text-center px-4">Projects Delivered</span>
-                                </div>
+                {/* --- WHY CHOOSE US & STATS SECTION --- */}
+                <section className="bg-white pt-16 md:pt-24 relative z-10">
+                    <div className="max-w-[1500px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-end">
+                        
+                        {/* Left: Why Choose Us */}
+                        <FadeIn className="lg:pr-20 pb-16 lg:pb-24">
+                            <h2 className="text-4xl md:text-5xl font-bold text-[#1b326b] mb-10 tracking-tight">Why Choose Us</h2>
+                            <ul className="space-y-6">
+                                {[
+                                    'Experienced Engineering Team',
+                                    'BIM-based Accurate Solutions',
+                                    'Cost Effective & Time Efficient',
+                                    'International Standards (ACI, AASHTO, Eurocodes)'
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-center gap-4">
+                                        <div className="w-6 h-6 rounded-full bg-[#e6f4ea] flex items-center justify-center shrink-0">
+                                            <Check size={14} strokeWidth={4} className="text-[#34a853]" />
+                                        </div>
+                                        <span className="text-[16px] md:text-[18px] font-medium text-slate-700">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </FadeIn>
 
-                                {/* 2. Center Dark Blue */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#1b326b] rounded-[100%] flex flex-col items-center justify-center shadow-2xl z-30 hover:scale-105 transition-transform duration-300 border-4 border-[#4E9CE4]/20">
-                                    <span className="text-6xl font-black text-white tracking-tighter">10+</span>
-                                    <span className="text-[10px] font-bold text-[#CED6DE] mt-2 tracking-widest uppercase">Years Experience</span>
-                                </div>
+                        {/* Right: Image */}
+                        <FadeIn delay={200} className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-t-xl overflow-hidden lg:translate-y-[1px]">
+                            <Image src="/w1.png" alt="Why Choose Us" fill className="object-cover object-center" />
+                        </FadeIn>
+                    </div>
 
-                                {/* 3. Bottom Right Primary Blue */}
-                                <div className="absolute bottom-4 left-1/2 w-48 h-48 bg-[#4E9CE4] rounded-[100%] flex flex-col items-center justify-center shadow-xl z-20 hover:scale-105 transition-transform duration-300">
-                                    <span className="text-5xl font-black text-white tracking-tighter">8+</span>
-                                    <span className="text-[10px] font-bold text-blue-100 mt-2 tracking-widest uppercase">Countries Served</span>
-                                </div>
-
-                                {/* 4. Top Right Light Gray */}
-                                <div className="absolute top-12 left-[70%] w-36 h-36 bg-[#CED6DE] border border-white rounded-[100%] flex flex-col items-center justify-center shadow-lg z-10 hover:scale-105 transition-transform duration-300">
-                                    <span className="text-3xl font-black text-slate-800 tracking-tighter">100%</span>
-                                    <span className="text-[8px] font-bold text-slate-600 mt-1 tracking-widest uppercase text-center px-2">Client Satisfaction</span>
-                                </div>
-                            </FadeIn>
-
-                            {/* Right side: Typography */}
-                            <FadeIn delay={200} className="lg:pl-10">
-                                <h2 className="text-[3.5rem] font-serif font-black text-[#1b1b1b] leading-[1.05] tracking-tight mb-8 max-w-[450px]">
-                                    Mastery in Every Square Meter.
-                                </h2>
-                                <p className="text-[16px] text-slate-600 leading-relaxed mb-10 max-w-md font-medium">
-                                    We leverage data-driven construction methodologies to eliminate waste and maximize architectural impact across borders and throughout the life of your infrastructure.
-                                </p>
-                                <a href="/about" className="inline-flex items-center gap-2 text-sm font-bold text-[#4E9CE4] hover:text-[#1b326b] transition-colors group">
-                                    <span className="border-b-[1.5px] border-[#4E9CE4] group-hover:border-[#1b326b] pb-0.5 transition-colors">Learn about our tech stack</span>
-                                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                                </a>
-                            </FadeIn>
+                    {/* --- BLUE STATS BANNER --- */}
+                    <div className="bg-[#1b326b] w-full py-16 relative z-20">
+                        <div className="max-w-[1500px] mx-auto px-6 md:px-12">
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-left">
+                                <FadeIn delay={100} className="flex flex-col gap-1">
+                                    <span className="text-5xl md:text-6xl font-bold text-white tracking-tight">150+</span>
+                                    <span className="text-[14px] md:text-[15px] font-medium text-[#B0C7E3]">Projects Delivered</span>
+                                </FadeIn>
+                                <FadeIn delay={200} className="flex flex-col gap-1">
+                                    <span className="text-5xl md:text-6xl font-bold text-white tracking-tight">10+</span>
+                                    <span className="text-[14px] md:text-[15px] font-medium text-[#B0C7E3]">Years Experience</span>
+                                </FadeIn>
+                                <FadeIn delay={300} className="flex flex-col gap-1">
+                                    <span className="text-5xl md:text-6xl font-bold text-white tracking-tight">8+</span>
+                                    <span className="text-[14px] md:text-[15px] font-medium text-[#B0C7E3]">Countries Served</span>
+                                </FadeIn>
+                                <FadeIn delay={400} className="flex flex-col gap-1">
+                                    <span className="text-5xl md:text-6xl font-bold text-white tracking-tight">100%</span>
+                                    <span className="text-[14px] md:text-[15px] font-medium text-[#B0C7E3]">Client Satisfaction</span>
+                                </FadeIn>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                {/* --- SECTION 2: FADE TYPOGRAPHY & WHY CHOOSE US --- */}
-                <section className="max-w-[1400px] mx-auto px-10 py-24 border-t border-[#CED6DE]/50">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <FadeIn>
-                            <h2 className="text-[3rem] font-serif font-black text-[#1b1b1b] tracking-tight mb-6 leading-[1.1]">
-                                Engineering for the next century.
-                            </h2>
-
-                            {/* Adjusted Fade Typography */}
-                            <div className="relative mb-14">
-                                <p className="text-[2rem] font-bold leading-[1.2] tracking-tight text-[#CED6DE] uppercase select-none">
-                                    synthesize advanced materials, digital project management, and veteran craftsmanship to redefine the built environment.
-                                </p>
-                                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white"></div>
-                            </div>
-
-                            {/* Why Choose Us Section matched to theme */}
-                            <div className="bg-[#f0f4f8] p-8 rounded-[1rem] border border-[#CED6DE] shadow-sm">
-                                <h3 className="text-2xl font-serif font-black text-[#1b326b] tracking-tight mb-8">Why Choose Us</h3>
-                                <ul className="space-y-5">
-                                    {[
-                                        'Experienced Engineering Team',
-                                        'BIM-based Accurate Solutions',
-                                        'Cost Effective & Time Efficient',
-                                        'International Standards (ACI, AASHTO, Eurocodes)'
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-4">
-                                            <div className="w-6 h-6 rounded-full bg-[#4E9CE4] flex items-center justify-center shrink-0 shadow-sm">
-                                                <Check size={14} strokeWidth={3} className="text-white" />
-                                            </div>
-                                            <span className="text-[15px] font-semibold text-slate-700">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </FadeIn>
-
-                        {/* Right Hand Video */}
-                        <FadeIn delay={200} className="relative h-[650px] rounded-[1rem] overflow-hidden shadow-2xl group border border-[#CED6DE]/30">
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 mix-blend-multiply"
-                            >
-                                <source src="/h1.mp4" type="video/mp4" />
-                            </video>
-                            <div className="absolute inset-0 bg-[#4E9CE4]/20 group-hover:bg-transparent transition-colors duration-700"></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#1b326b]/90 via-[#4E9CE4]/30 to-transparent opacity-90"></div>
-                        </FadeIn>
-                    </div>
+                {/* --- CONTACT BANNER WRAPPER --- */}
+                <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-24 pt-12">
 
                     {/* Contact Banner */}
                     <FadeIn delay={100} className="mt-20 bg-gradient-to-r from-[#4E9CE4] to-[#1b326b] rounded-[1rem] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl shadow-[#4E9CE4]/20 relative overflow-hidden">

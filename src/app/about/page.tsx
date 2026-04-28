@@ -69,25 +69,7 @@ const AboutPage = () => {
             <section className="relative py-24 px-6 md:px-12 bg-white flex-1">
                 <div className="max-w-[1200px] mx-auto flex flex-col gap-20">
 
-                    {/* CEO Card */}
-                    <FadeIn>
-                        <div className="bg-[#1b326b] text-white p-8 md:p-12 rounded-sm shadow-xl flex flex-col md:flex-row items-center md:items-start gap-8 border border-[#4E9CE4]/30 hover:shadow-2xl hover:scale-[1.01] transition-all duration-300">
-                            <div className="w-24 h-24 md:w-32 md:h-32 bg-white/10 rounded-full border-2 border-[#4E9CE4] flex-shrink-0 relative overflow-hidden shadow-[0_0_20px_rgba(78,156,228,0.3)]">
-                                {/* Optional CEO Image */}
-                                {/* <Image src="/ceo.jpg" alt="CEO" fill className="object-cover" /> */}
-                            </div>
-                            <div className="text-center md:text-left">
-                                <h4 className="text-2xl md:text-3xl font-serif font-black hover:text-[#4E9CE4] transition-colors mb-2">Rehan Qadir</h4>
-                                <p className="text-[14px] md:text-[15px] text-[#4E9CE4] font-bold tracking-widest uppercase mb-6 drop-shadow-sm">Chief Executive Officer</p>
-                                <div className="text-[15px] md:text-[17px] font-medium leading-relaxed text-blue-50 relative">
-                                    <span className="text-5xl text-[#4E9CE4]/30 absolute -top-4 -left-6 font-serif">"</span>
-                                    <p className="italic relative z-10 border-l-2 border-[#4E9CE4]/50 pl-4 py-1">
-                                        Tech-Tronix Solutions was built on the foundation of delivering precision, innovation, and long-term value to every project. We integrate excellence built over a decade with world-renowned infrastructure expertise to create a legacy of reliability and trust.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </FadeIn>
+
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <FadeIn delay={100} className="relative aspect-square md:aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group border border-[#CED6DE]/30">
