@@ -8,7 +8,8 @@ import {
     Twitter,
     Instagram,
     Check,
-    ChevronDown
+    ChevronDown,
+    Quote
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -103,47 +104,38 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* --- TEAM SECTION --- */}
+            {/* --- CEO SECTION --- */}
             <section className="py-24 px-6 md:px-12 bg-[#f8fafc] border-t border-[#CED6DE]/50">
                 <div className="max-w-[1200px] mx-auto">
                     <div className="text-center mb-16">
                         <FadeIn>
-                            <h2 className="text-[35px] md:text-[50px] font-serif font-black text-[#1b326b] tracking-tight">Meet the Team</h2>
+                            <h2 className="text-[35px] md:text-[50px] font-serif font-black text-[#1b326b] tracking-tight">Meet Our CEO</h2>
                             <div className="w-24 h-1.5 bg-[#4E9CE4] mx-auto mt-6"></div>
                         </FadeIn>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                        <FadeIn delay={150} className="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center space-y-8">
-                            <p className="text-[16px] md:text-[18px] font-serif text-slate-800 leading-relaxed font-medium">
-                                At Tech Tronix Solutions, our people represent our greatest asset. Our team comprises highly qualified engineers, technical specialists, designers, and project professionals who are driven by a shared commitment to excellence, integrity, and innovation.
-                            </p>
-
-                            <ul className="space-y-4">
-                                {[
-                                    'Experienced Engineering Team',
-                                    'BIM-based Accurate Solutions',
-                                    'Cost Effective & Time Efficient',
-                                    'International Standards (ACI, AASHTO, Eurocodes)'
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-4 bg-white p-4 rounded-sm shadow-sm border border-[#CED6DE]/30">
-                                        <div className="w-8 h-8 rounded-full bg-[#4E9CE4]/10 flex items-center justify-center shrink-0">
-                                            <Check size={16} strokeWidth={3} className="text-[#4E9CE4]" />
-                                        </div>
-                                        <span className="text-[15px] font-bold text-[#1b1b1b] tracking-wide">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <p className="text-[15px] text-slate-600 leading-relaxed font-medium">
-                                With a deep understanding of local operating environments and international engineering standards, we deliver solutions with precision, accountability, and strategic insight. Guided by values of collaboration, professionalism, and continuous advancement, the TechTronix team is constantly innovating, overcoming challenges to build reliable and future-ready infrastructure, and helping our clients deliver long-term value and success.
-                            </p>
+                        <FadeIn delay={150} className="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
+                            <div className="relative bg-white p-8 md:p-10 rounded-br-[40px] shadow-2xl border-l-4 border-[#4E9CE4]">
+                                <Quote size={80} className="text-[#4E9CE4]/10 absolute -top-4 -left-4 rotate-180" />
+                                <div className="relative z-10">
+                                    <p className="text-[17px] md:text-[19px] font-serif text-slate-700 leading-relaxed font-medium italic mb-8">
+                                        "With decades of visionary leadership in engineering and infrastructure development, our CEO has been the driving force behind Tech Tronix Solutions' commitment to excellence, innovation, and international standards. Dedicated to building future-ready infrastructure, his strategic insight ensures every project delivers long-term value and unwavering quality."
+                                    </p>
+                                    <div className="border-t border-slate-100 pt-6">
+                                        <h3 className="text-[26px] font-serif font-bold text-[#1b1b1b] tracking-tight">Muhammad Ali</h3>
+                                        <p className="text-[14px] font-bold text-[#4E9CE4] tracking-widest uppercase mt-1">Chief Executive Officer</p>
+                                    </div>
+                                </div>
+                            </div>
                         </FadeIn>
 
-                        <FadeIn delay={250} className="lg:col-span-7 order-1 lg:order-2">
-                            <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-xl border border-[#CED6DE]/50">
-                                <Image src="/team.webp" alt="The TechTronix Team" fill className="object-cover" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1b326b]/80 via-transparent to-transparent opacity-80 mix-blend-multiply pointer-events-none"></div>
+                        <FadeIn delay={250} className="lg:col-span-7 order-1 lg:order-2 relative">
+                            <div className="absolute -top-6 -right-6 w-48 h-48 bg-[#4E9CE4]/20 rounded-full blur-3xl z-0"></div>
+                            <div className="absolute -bottom-8 -left-8 w-56 h-56 bg-[#1b326b]/10 rounded-full blur-3xl z-0"></div>
+                            <div className="relative z-10 w-full aspect-[4/3] rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(27,50,107,0.15)] border-[8px] border-white ring-1 ring-slate-200 group">
+                                <Image src="/team.webp" alt="CEO" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1b326b]/40 via-transparent to-transparent opacity-80 mix-blend-multiply pointer-events-none"></div>
                             </div>
                         </FadeIn>
                     </div>

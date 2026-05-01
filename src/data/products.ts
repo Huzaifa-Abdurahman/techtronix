@@ -196,7 +196,70 @@ Key Features and Functions:
 Types of Geonets:
 • Biplanar Geonet: Standard two-dimensional rib structure for reliable flow.
 • Triplanar Geonet: Advanced three-dimensional structure for superior flow capacity and compression resistance.
-• Geonet Composites: Combined with geotextiles for integrated filtration and drainage.
         `
+    },
+    {
+        id: "new-1",
+        name: "Highways",
+        slug: "highways",
+        description: "We provide advanced Highway Engineering Solutions, including Non-Destructive Testing (NDT) Equipment and Intelligent Transportation Systems (ITS) for efficient traffic management.",
+        image: "/highway.jpg",
+        fullDescription: "We provide advanced Highway Engineering Solutions, including Non-Destructive Testing (NDT) Equipment and Intelligent Transportation Systems (ITS) for efficient traffic management.\n\nOur Solutions Include:\n• Falling Weight Deflectometer (FWD)\n• Rolling Dynamic Deflectometer (RDD)\n• Laser Crack Measurement System\n• Laser Profilometer\n• Traffic Counters\n• AI-Based Traffic Counting & Classification Systems"
+    },
+    {
+        id: "new-2",
+        name: "Geosynthetics",
+        slug: "geosynthetics",
+        description: "We specialize in Geosynthetic Solutions for infrastructure projects such as MSE walls, landfill capping, and slope stabilization.",
+        image: "/geogrid-1.JPG",
+        fullDescription: "We specialize in Geosynthetic Solutions for infrastructure projects such as MSE walls, landfill capping, and slope stabilization.\n\nOur Product Range:\n• HDPE Geogrids (Biaxial & Uniaxial)\n• Geotextiles\n• Geobags\n• Geonets\n• Triplanar Geonets\n• Geofilters"
+    },
+    {
+        id: "new-3",
+        name: "Solid & Liquid Waste Treatment",
+        slug: "solid-liquid-waste-treatment",
+        description: "We provide specialized equipment and solutions for solid waste management and wastewater treatment systems.",
+        image: "/Waste Water Treatment System.JPG",
+        fullDescription: "We provide specialized equipment and solutions for solid waste management and wastewater treatment systems.\n\nOur Offerings:\n• Solid Waste Incinerators\n• Solid Waste Separators\n• Leachate Treatment Systems\n• Landfill Gas (LFG) Collection & Flare Systems\n• Leachate Pumps"
+    },
+    {
+        id: "new-4",
+        name: "General Engineering Items",
+        slug: "general-engineering-items",
+        description: "We offer a wide range of engineering products and infrastructure solutions.",
+        image: "/eng.jpg",
+        fullDescription: "We offer a wide range of engineering products and infrastructure solutions.\n\nOur Supplies Include:\n• 132 kV Grid Station Equipment\n• Steel Molds\n• Structural Steel Members\n• Power Cables\n• Computer Servers"
+    },
+    {
+        id: "new-5",
+        name: "Construction Management & Execution Services",
+        slug: "construction-management-execution",
+        description: "We provide comprehensive construction management and execution services for specialized infrastructure projects.",
+        image: "/krane.png",
+        fullDescription: "We provide comprehensive construction management and execution services for specialized infrastructure projects.\n\nOur expertise includes:\n• MSE Wall Construction\n• Landfill Gas Collection System Installation\n• Waste Treatment Plant Installation\n• Installation of Specialized Engineering Products\n\nUsing advanced project management software, we efficiently handle large-scale construction projects and provide complete back-office support to our clients."
+    },
+    {
+        id: "new-6",
+        name: "BIM Design & Clash Detection Services",
+        slug: "bim-design-clash-detection",
+        description: "We have a team of experienced civil engineers Specialized in Building Information Modeling (BIM).",
+        image: "/i2.jpg",
+        fullDescription: "We have a team of experienced civil engineers Specialized in Building Information Modeling (BIM).\n\nOur services include:\n• BIM Modeling\n• Clash Detection & Coordination\n• Scan-to-BIM Services\n\nWe ensure accurate design integration and minimize on-site conflicts through advanced BIM tools."
+    },
+    {
+        id: "new-7",
+        name: "Surveying & Photogrammetry Services",
+        slug: "surveying-photogrammetry",
+        description: "Our expert surveying team provides accurate and reliable data for infrastructure projects.",
+        image: "/i4.jpg",
+        fullDescription: "Our expert surveying team provides accurate and reliable data for infrastructure projects.\n\nOur capabilities include:\n• Large Area Land Surveying\n• Photogrammetry Surveys\n• 3D Modeling of Infrastructure & Buildings\n• Pavement Condition Surveys"
+    },
+    {
+        id: "new-8",
+        name: "Steel Structure Design & Mold Engineering",
+        slug: "steel-structure-design-mold-engineering",
+        description: "We offer complete solutions for steel structures and heavy mold design & supply.",
+        image: "/i7.jpg",
+        fullDescription: "We offer complete solutions for steel structures and heavy mold design & supply.\n\nOur services include:\n• Pre-Fabricated Building Design & Supply (EPC Solutions)\n• Large Span Steel Structures\n• U-Tub Girder Mold Design & Supply\n• Custom Steel Molds for Precast Concrete Panels\n\nWith the support of our international partners, we deliver high-quality and cost-effective solutions."
     }
 ];

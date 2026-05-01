@@ -54,7 +54,7 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
 const coreServices = [
     {
         title: "HIGH-WAYS",
-        description: "Comprehensive solutions for highway design and safety.",
+        description: "Highways Advanced Non-Destructive Testing Equipment Services and ITS Solutions, including Intelligent Traffic Management.",
         icon: Car,
         items: [
             "Profilometer",
@@ -69,7 +69,7 @@ const coreServices = [
     },
     {
         title: "GEO-SYNTHETICS",
-        description: "Advanced non-destructive testing & geo-synthetics steps services.",
+        description: "Specialized in geosynthetics, especially for MSE walls, landfill capping, and slope stabilization solutions.",
         icon: Shield,
         items: [
             "Geogrids",
@@ -82,7 +82,7 @@ const coreServices = [
     },
     {
         title: "WASTE WATER",
-        description: "Residual & wastewater treatment systems for efficient management.",
+        description: "We provide specialized equipment and products for solid waste land treatment and liquid wastewater treatment.",
         icon: Activity,
         items: [
             "Landfill Design & Engineering",
@@ -93,8 +93,17 @@ const coreServices = [
         ]
     },
     {
+        title: "GENERAL",
+        description: "We provide specialized engineering solutions along with a range of advanced equipment.",
+        icon: FileText,
+        items: [
+            "Special Engineering Services solutions",
+            "Including different equipment"
+        ]
+    },
+    {
         title: "ENGINEERING SERVICES",
-        description: "Engineering tools and tech for safe and optimal structural design.",
+        description: "We provide BIM design, project planning, EPC services, infrastructure design, and construction management solutions.",
         icon: Settings,
         items: [
             "BIM Design",
@@ -102,15 +111,6 @@ const coreServices = [
             "Construction management service",
             "Infrastructure design",
             "EPC services"
-        ]
-    },
-    {
-        title: "GENERAL",
-        description: "Specialized general engineering solutions and equipment.",
-        icon: FileText,
-        items: [
-            "Special Engineering Services solutions",
-            "Including different equipment"
         ]
     }
 ];
@@ -126,8 +126,8 @@ const ServiceCard = ({ title, description, items, icon: Icon }: ServiceCardProps
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div 
-            className="bg-white rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-[#CED6DE]/30 overflow-hidden group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-fit cursor-pointer" 
+        <div
+            className="bg-white rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-[#CED6DE]/30 overflow-hidden group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-fit cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
         >
             <div className="p-8 flex flex-col items-center text-center">
@@ -140,7 +140,7 @@ const ServiceCard = ({ title, description, items, icon: Icon }: ServiceCardProps
                     <ChevronDown size={20} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                 </div>
             </div>
-            
+
             <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="p-6 pt-0 bg-white">
                     <div className="h-[1px] w-full bg-[#CED6DE]/30 mb-4"></div>
@@ -222,11 +222,11 @@ const App = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 xl:gap-8 items-start">
                         {coreServices.map((service, index) => (
                             <FadeIn key={index} delay={index * 100} className="w-full">
-                                <ServiceCard 
-                                    title={service.title} 
+                                <ServiceCard
+                                    title={service.title}
                                     description={service.description}
-                                    items={service.items} 
-                                    icon={service.icon} 
+                                    items={service.items}
+                                    icon={service.icon}
                                 />
                             </FadeIn>
                         ))}
@@ -236,7 +236,7 @@ const App = () => {
                 {/* --- WHY CHOOSE US & STATS SECTION --- */}
                 <section className="bg-white pt-16 md:pt-24 relative z-10">
                     <div className="max-w-[1500px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-end">
-                        
+
                         {/* Left: Why Choose Us */}
                         <FadeIn className="lg:pr-20 pb-16 lg:pb-24">
                             <h2 className="text-4xl md:text-5xl font-bold text-[#1b326b] mb-10 tracking-tight">Why Choose Us</h2>

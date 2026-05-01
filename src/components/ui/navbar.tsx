@@ -22,13 +22,13 @@ export function Navbar() {
         <header className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-2 md:py-3 bg-white shadow-sm transition-all duration-300">
             <div className="flex items-center justify-between w-full max-w-[1500px] mx-auto">
                 {/* Left: Logo */}
-                <Link href="/" className="flex items-center z-[110] overflow-hidden" style={{ margin: '-2px 0' }}>
+                <Link href="/" className="flex items-center z-[110] px-2 md:px-4" style={{ margin: '-2px 0' }}>
                     <Image
-                        src="/l3.png"
+                        src="/l5.png"
                         alt="Tech-Tronix Solutions"
-                        width={240}
-                        height={90}
-                        className="h-[60px] md:h-[80px] w-auto object-contain scale-110"
+                        width={300}
+                        height={110}
+                        className="h-[60px] md:h-[75px] w-auto object-contain"
                         priority
                     />
                 </Link>

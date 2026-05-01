@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Settings } from 'lucide-react';
+import { ArrowRight, Activity, Map, Recycle, Zap, Construction, Building2, Ruler, Cog } from 'lucide-react';
 import { products } from '@/data/products';
 
 // Custom hook for scroll animation
@@ -35,55 +35,39 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
     );
 }
 
-const ProductCard = ({ product }: { product: any }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const hasMultipleImages = product.images && product.images.length > 0;
-    const images = hasMultipleImages ? product.images : [product.image];
+const getIcon = (id: string) => {
+    switch (id) {
+        case 'new-1': return Activity;
+        case 'new-2': return Map;
+        case 'new-3': return Recycle;
+        case 'new-4': return Zap;
+        case 'new-5': return Construction;
+        case 'new-6': return Building2;
+        case 'new-7': return Ruler;
+        case 'new-8': return Cog;
+        default: return Activity;
+    }
+}
 
-    useEffect(() => {
-        if (!hasMultipleImages || images.length <= 1) return;
-
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % images.length);
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, [hasMultipleImages, images.length]);
-
+const NewServiceCard = ({ product }: { product: any }) => {
+    const Icon = getIcon(product.id);
+    
     return (
-        <Link href={`/products/${product.slug}`} className="bg-white/80 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/50 flex flex-col h-full group/card hover:shadow-2xl hover:border-[#4E9CE4]/40 hover:-translate-y-2 transition-all duration-500">
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
-                {images.map((img: string, idx: number) => (
-                    <div
-                        key={idx}
-                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                            }`}
-                    >
-                        <Image
-                            src={img}
-                            alt={product.name}
-                            fill
-                            className="object-cover group-hover/card:scale-110 transition-transform duration-700 ease-in-out"
-                        />
-                    </div>
-                ))}
-                <div className="absolute inset-0 bg-[#1b326b]/5 group-hover/card:bg-transparent transition-colors duration-500"></div>
+        <Link href={`/products/${product.slug}`} className="bg-slate-50 rounded-lg p-6 md:p-8 flex flex-col h-full group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-slate-200">
+            <div className="w-14 h-14 rounded-full border border-[#1b326b] flex items-center justify-center shrink-0 mb-6 bg-white group-hover:bg-[#1b326b] transition-colors duration-300">
+                <Icon size={24} className="text-[#1b326b] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
             </div>
-            <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0 group-hover/card:bg-[#4E9CE4] group-hover/card:text-white transition-colors duration-300">
-                        <Settings size={16} strokeWidth={2} className="text-[#1b326b] group-hover/card:text-white transition-colors" />
-                    </div>
-                    <h3 className="text-[19px] font-sans font-bold text-[#1b326b] leading-tight group-hover/card:text-[#4E9CE4] transition-colors duration-300 line-clamp-2">
-                        {product.name}
-                    </h3>
-                </div>
-                <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                    {product.description}
-                </p>
-                <div className="mt-auto inline-flex items-center gap-2 text-[14px] font-bold text-[#1b326b] group-hover/card:text-[#4E9CE4] transition-colors uppercase tracking-wider">
-                    View Details <ArrowRight size={16} className="group-hover/card:translate-x-1.5 transition-transform" />
-                </div>
+            
+            <h3 className="text-[19px] font-semibold text-[#1b326b] mb-4 font-sans leading-tight">
+                {product.name}
+            </h3>
+            
+            <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-8 flex-1">
+                {product.description}
+            </p>
+            
+            <div className="mt-auto inline-flex items-center gap-2 text-[14px] font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
+                Read More <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
             </div>
         </Link>
     );
@@ -110,11 +94,10 @@ const ProductsPage = () => {
                 <div className="relative z-10 max-w-[1500px] mx-auto w-full">
                     <FadeIn className="max-w-[800px] w-full mt-4 md:mt-8">
                         <h1 className="text-[40px] md:text-[55px] lg:text-[75px] font-serif font-bold leading-[1.05] tracking-tight text-white mb-6 text-left drop-shadow-sm hover:scale-[1.02] transition-transform duration-500 cursor-default">
-                            Our Products
+                            Products & Services
                         </h1>
                         <p className="text-[17px] md:text-[22px] font-medium leading-relaxed text-blue-50/90 mb-10 max-w-[650px] text-left drop-shadow-sm border-l-4 border-[#4E9CE4] pl-6 transition-colors duration-500">
-                            High-performance machines and equipment for precise<br className="hidden md:block" />
-                            engineering, construction, and geosynthetic applications.
+                            Advanced engineering solutions, precise construction management, and comprehensive infrastructure equipment.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 max-w-[500px]">
                             <a href="/contact" className="flex-1 py-3 px-6 bg-[#0a1b42] hover:bg-[#142654] text-white font-medium text-[14px] md:text-[15px] transition-all hover:-translate-y-1 shadow-xl border border-transparent hover:border-[#4E9CE4]/30 text-center rounded-sm">
@@ -130,19 +113,36 @@ const ProductsPage = () => {
 
             {/* --- PRODUCTS GRID SECTION --- */}
             <section className="relative z-10 py-16 px-6 md:px-12 max-w-[1500px] mx-auto w-full group">
-                <FadeIn delay={100} className="mb-12">
+                <FadeIn delay={100} className="mb-12 text-center md:text-left">
                     <h2 className="text-[32px] md:text-[42px] font-serif font-bold text-[#1b326b] tracking-tight mb-2 hover:text-[#4E9CE4] transition-colors duration-500">
-                        Advanced Engineering Equipment for Sale
+                        Products & Solutions
                     </h2>
                     <p className="text-[17px] text-[#2d3748] font-medium leading-relaxed max-w-4xl">
-                        Explore our range of specialized equipment designed to deliver top-tier performance in construction, geosynthetics, concrete work, and ground engineering.
+                        High-performance solutions for highway engineering, geosynthetics, waste management, and general infrastructure.
                     </p>
                 </FadeIn>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {products.filter(p => !['1', '2', '3', '4', '5', '6', '7', '8', '11'].includes(p.id)).map((product, idx) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl">
+                    {products.filter(p => ['new-1', 'new-2', 'new-3', 'new-4'].includes(p.id)).map((product, idx) => (
                         <FadeIn key={product.id} delay={100 + (idx * 50)} className="w-full">
-                            <ProductCard product={product} />
+                            <NewServiceCard product={product} />
+                        </FadeIn>
+                    ))}
+                </div>
+
+                <FadeIn delay={100} className="mb-12 mt-24 text-center md:text-left">
+                    <h2 className="text-[32px] md:text-[42px] font-serif font-bold text-[#1b326b] tracking-tight mb-2 hover:text-[#4E9CE4] transition-colors duration-500">
+                        Engineering Services
+                    </h2>
+                    <p className="text-[17px] text-[#2d3748] font-medium leading-relaxed max-w-4xl">
+                        Expert construction management, BIM design, precision surveying, and structural engineering services.
+                    </p>
+                </FadeIn>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl">
+                    {products.filter(p => ['new-5', 'new-6', 'new-7', 'new-8'].includes(p.id)).map((product, idx) => (
+                        <FadeIn key={product.id} delay={100 + (idx * 50)} className="w-full">
+                            <NewServiceCard product={product} />
                         </FadeIn>
                     ))}
                 </div>
