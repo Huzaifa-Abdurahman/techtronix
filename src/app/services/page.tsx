@@ -16,6 +16,7 @@ import {
     Droplets
 } from 'lucide-react';
 import Image from 'next/image';
+import { products } from '@/data/products';
 
 // Custom hook for scroll animation
 function useInView(options = { threshold: 0.1 }) {
@@ -92,143 +93,25 @@ const ServicesPage = () => {
                 </FadeIn>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-
-                    {/* Row 1: Left */}
-                    <FadeIn delay={100} className="w-full">
-                        <div className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group">
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
-                                    <Activity size={24} className="text-[#1b326b]" strokeWidth={2} />
+                    {products.filter(p => ["new-5", "new-6", "new-7", "new-8"].includes(p.id)).map((service, index) => (
+                        <FadeIn delay={100 * (index + 1)} className="w-full" key={service.id}>
+                            <a href={`/products/${service.slug}`} className="bg-white/70 backdrop-blur-md border border-white/50 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col cursor-pointer group block overflow-hidden hover:-translate-y-1">
+                                <div className="relative w-full h-[240px] overflow-hidden">
+                                    <Image src={service.image} alt={service.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <div className="absolute inset-0 bg-[#1b326b]/10 mix-blend-overlay"></div>
                                 </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">Highway NDT Services</h3>
-                            </div>
-                            <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Non-destructive testing to ensure the safety, integrity, and longevity of highway infrastructure.
-                            </p>
-                            <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
-                                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                            </div>
-                        </div>
-                    </FadeIn>
-
-                    {/* Row 1: Right */}
-                    <FadeIn delay={200} className="w-full">
-                        <a href="/contactor-pre-engineering" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
-                                    <Map size={24} className="text-[#1b326b]" strokeWidth={2} />
+                                <div className="p-8 flex flex-col flex-1">
+                                    <h3 className="text-xl font-medium text-[#1b326b] mb-4">{service.name}</h3>
+                                    <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
+                                        {service.description}
+                                    </p>
+                                    <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors mt-auto">
+                                        Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">Contactor Pre-Engineering</h3>
-                            </div>
-                            <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Detailed pre-engineering structuring, cost-estimation, and mitigation surveys to assess site conditions and inform project design.
-                            </p>
-                            <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
-                                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                            </div>
-                        </a>
-                    </FadeIn>
-
-                    {/* Row 2: Left (Image Card) */}
-                    <FadeIn delay={100} className="w-full">
-                        <div className="relative w-full h-full min-h-[300px] rounded-sm overflow-hidden shadow-sm border border-white/50 group cursor-pointer">
-                            <Image src="/roi.jpg" alt="ROMs Bustin System" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-[#1b326b]/20 mix-blend-overlay"></div>
-                            {/* Date Block */}
-                            <div className="absolute bottom-6 left-6 bg-[#d32f2f] text-white p-3 md:p-4 rounded-sm flex flex-col items-center justify-center shadow-lg w-20">
-                                <span className="text-3xl font-bold leading-none">15</span>
-                                <span className="text-[11px] font-medium leading-tight mt-1">MAR</span>
-                                <span className="text-[11px] font-medium leading-none">2024</span>
-                            </div>
-                        </div>
-                    </FadeIn>
-
-                    {/* Row 2: Right */}
-                    <FadeIn delay={200} className="w-full">
-                        <a href="/roms-bustin-system" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
-                                    <Settings size={22} className="text-[#1b326b]" strokeWidth={2} />
-                                </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">ROM's Bustin System</h3>
-                            </div>
-                            <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Precision structural reinforcement and controlled demolition solutions for complex procurement environments.
-                            </p>
-                            <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
-                                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                            </div>
-                        </a>
-                    </FadeIn>
-
-                    {/* Row 3: Left */}
-                    <FadeIn delay={100} className="w-full">
-                        <a href="/geosynthetics-solutions" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
-                                    <Layers size={22} className="text-[#1b326b]" strokeWidth={2} />
-                                </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">Geosynthetics Solutions</h3>
-                            </div>
-                            <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Enhance soil stability, erosion control and infrastructure reinforcement using advanced geosynthetics.
-                            </p>
-                            <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
-                                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                            </div>
-                        </a>
-                    </FadeIn>
-
-                    {/* Row 3: Right */}
-                    <FadeIn delay={200} className="w-full">
-                        <a href="/engineering-solutions" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
-                                    <Briefcase size={22} className="text-[#1b326b]" strokeWidth={2} />
-                                </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">Engineering Solutions</h3>
-                            </div>
-                            <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Modern civil engineering services for efficient planning, precise design & innovative solutions.
-                            </p>
-                            <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
-                                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                            </div>
-                        </a>
-                    </FadeIn>
-
-                    {/* Row 4: Left (Image Card) */}
-                    <FadeIn delay={100} className="w-full">
-                        <div className="relative w-full h-full min-h-[300px] rounded-sm overflow-hidden shadow-sm border border-white/50 group cursor-pointer">
-                            <Image src="/i2.jpg" alt="Environmental Services" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-[#1b326b]/10 mix-blend-overlay"></div>
-                            {/* Date Block */}
-                            <div className="absolute bottom-6 left-6 bg-[#d32f2f] text-white p-3 md:p-4 rounded-sm flex flex-col items-center justify-center shadow-lg w-20">
-                                <span className="text-3xl font-bold leading-none">05</span>
-                                <span className="text-[11px] font-medium leading-tight mt-1">SEP</span>
-                                <span className="text-[11px] font-medium leading-none">2023</span>
-                            </div>
-                        </div>
-                    </FadeIn>
-
-                    {/* Row 4: Right */}
-                    <FadeIn delay={200} className="w-full">
-                        <a href="/waste-water-treatment-solutions" className="bg-white/70 backdrop-blur-md border border-white/50 p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col cursor-pointer group block">
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-full border-2 border-[#1b326b] flex items-center justify-center shrink-0">
-                                    <Droplets size={24} className="text-[#1b326b]" strokeWidth={2} />
-                                </div>
-                                <h3 className="text-xl font-medium text-[#1b326b]">Waste Water Treatment</h3>
-                            </div>
-                            <p className="text-[15px] text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                                Smart, sustainable & compliant water treatment systems to manage wastewater, air quality, and environmental risks.
-                            </p>
-                            <div className="inline-flex items-center gap-2 text-sm font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
-                                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                            </div>
-                        </a>
-                    </FadeIn>
-
+                            </a>
+                        </FadeIn>
+                    ))}
                 </div>
             </section>
 

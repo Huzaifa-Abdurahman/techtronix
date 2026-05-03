@@ -18,7 +18,7 @@ export function Footer() {
                     <div className="mb-8">
                         <Link href="/">
                             <Image
-                                src="/l2.png"
+                                src="/l5.png"
                                 alt="Tech-Tronix Solutions"
                                 width={200}
                                 height={70}

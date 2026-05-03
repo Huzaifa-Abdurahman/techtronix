@@ -51,21 +51,21 @@ const getIcon = (id: string) => {
 
 const NewServiceCard = ({ product }: { product: any }) => {
     const Icon = getIcon(product.id);
-    
+
     return (
         <Link href={`/products/${product.slug}`} className="bg-slate-50 rounded-lg p-6 md:p-8 flex flex-col h-full group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-slate-200">
             <div className="w-14 h-14 rounded-full border border-[#1b326b] flex items-center justify-center shrink-0 mb-6 bg-white group-hover:bg-[#1b326b] transition-colors duration-300">
                 <Icon size={24} className="text-[#1b326b] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
             </div>
-            
+
             <h3 className="text-[19px] font-semibold text-[#1b326b] mb-4 font-sans leading-tight">
                 {product.name}
             </h3>
-            
+
             <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-8 flex-1">
                 {product.description}
             </p>
-            
+
             <div className="mt-auto inline-flex items-center gap-2 text-[14px] font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
                 Read More <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
             </div>
@@ -94,14 +94,14 @@ const ProductsPage = () => {
                 <div className="relative z-10 max-w-[1500px] mx-auto w-full">
                     <FadeIn className="max-w-[800px] w-full mt-4 md:mt-8">
                         <h1 className="text-[40px] md:text-[55px] lg:text-[75px] font-serif font-bold leading-[1.05] tracking-tight text-white mb-6 text-left drop-shadow-sm hover:scale-[1.02] transition-transform duration-500 cursor-default">
-                            Products & Services
+                            Products
                         </h1>
                         <p className="text-[17px] md:text-[22px] font-medium leading-relaxed text-blue-50/90 mb-10 max-w-[650px] text-left drop-shadow-sm border-l-4 border-[#4E9CE4] pl-6 transition-colors duration-500">
-                            Advanced engineering solutions, precise construction management, and comprehensive infrastructure equipment.
+                            We provide design and supply services for projects across different countries.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 max-w-[500px]">
                             <a href="/contact" className="flex-1 py-3 px-6 bg-[#0a1b42] hover:bg-[#142654] text-white font-medium text-[14px] md:text-[15px] transition-all hover:-translate-y-1 shadow-xl border border-transparent hover:border-[#4E9CE4]/30 text-center rounded-sm">
-                                Request a Quote
+                                Explore Products
                             </a>
                             <a href="/contact" className="flex-1 py-3 px-6 bg-white/90 hover:bg-white text-[#1b326b] font-medium text-[14px] md:text-[15px] transition-all hover:-translate-y-1 shadow-xl border border-white/40 text-center rounded-sm">
                                 Contact Us

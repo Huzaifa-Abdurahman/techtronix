@@ -176,17 +176,15 @@ const App = () => {
             <div className="fixed inset-0 bg-black/50 z-0 pointer-events-none"></div>
 
             {/* --- HERO SECTION --- */}
-            <div className="fixed inset-0 z-10 w-full h-[100vh] pointer-events-none flex flex-col justify-center px-6 md:px-12 max-w-[1500px] mx-auto pt-20 md:pt-28 lg:pt-32">
-                <FadeIn className="max-w-[1000px] w-full pointer-events-auto mt-0 lg:mt-8 pt-0">
-                    <h1 className="text-[36px] sm:text-[45px] md:text-[60px] lg:text-[85px] font-serif font-bold leading-[1.05] md:leading-[1.0] tracking-tight text-white mb-4 text-left drop-shadow-lg">
-                        Engineering<br />
-                        Tomorrow's<br />
-                        Infrastructure<br />
-                        Today
+            <div className="fixed inset-0 z-10 w-full h-[100vh] pointer-events-none flex flex-col justify-center px-6 md:px-12 max-w-[1500px] mx-auto pt-10 md:pt-16 lg:pt-20">
+                <FadeIn className="max-w-[1000px] w-full pointer-events-auto mt-0 pt-0">
+                    <h1 className="text-[24px] sm:text-[32px] md:text-[40px] lg:text-[52px] font-serif font-bold leading-[1.1] md:leading-[1.05] tracking-tight text-white mb-4 text-left drop-shadow-lg">
+                        Cutting-Edge Technologies. Research-Based <br />
+                        Solutions. Professional Engineering Team. — <br />
+                        Digitally Planned. Expertly Executed
                     </h1>
-                    <p className="text-[14px] sm:text-[16px] md:text-[19px] font-medium leading-[1.4] text-[#CED6DE] mb-6 md:mb-8 max-w-[650px] text-left drop-shadow-md">
-                        Trusted Civil Engineering & BIM Solutions for Industrial,<br className="hidden md:block" />
-                        Commercial & Infrastructure Projects
+                    <p className="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[1.4] text-[#CED6DE] mb-6 max-w-[700px] text-left drop-shadow-md">
+                        We bring the latest research-backed engineering products and a team of dedicated professionals to solve your toughest problems — we digitally plan and execute with modern techniques. From concept to completion, we deliver.
                     </p>
                     {/* Hero Buttons Aligned with Lower Section */}
                     <div className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-[450px]">
@@ -242,10 +240,10 @@ const App = () => {
                             <h2 className="text-4xl md:text-5xl font-bold text-[#1b326b] mb-10 tracking-tight">Why Choose Us</h2>
                             <ul className="space-y-6">
                                 {[
-                                    'Experienced Engineering Team',
-                                    'BIM-based Accurate Solutions',
-                                    'Cost Effective & Time Efficient',
-                                    'International Standards (ACI, AASHTO, Eurocodes)'
+                                    'Cutting-Edge Products',
+                                    'Research-Based Solutions',
+                                    'Professional Engineering Team',
+                                    'Digital Planning & Modern Execution'
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center gap-4">
                                         <div className="w-6 h-6 rounded-full bg-[#e6f4ea] flex items-center justify-center shrink-0">

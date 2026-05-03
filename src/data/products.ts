@@ -226,7 +226,7 @@ Types of Geonets:
         id: "new-4",
         name: "General Engineering Items",
         slug: "general-engineering-items",
-        description: "We offer a wide range of engineering products and infrastructure solutions.",
+        description: "We provide sourcing of high-quality engineering products for clients in the industrial and power sectors, tailored to their specific requirements.",
         image: "/eng.jpg",
         fullDescription: "We offer a wide range of engineering products and infrastructure solutions.\n\nOur Supplies Include:\n• 132 kV Grid Station Equipment\n• Steel Molds\n• Structural Steel Members\n• Power Cables\n• Computer Servers"
     },
@@ -256,9 +256,9 @@ Types of Geonets:
     },
     {
         id: "new-8",
-        name: "Steel Structure Design & Mold Engineering",
+        name: "Steel Structures and Steel Formwork",
         slug: "steel-structure-design-mold-engineering",
-        description: "We offer complete solutions for steel structures and heavy mold design & supply.",
+        description: "We provide advanced, cutting-edge engineering products and equipment for diverse industrial requirements.",
         image: "/i7.jpg",
         fullDescription: "We offer complete solutions for steel structures and heavy mold design & supply.\n\nOur services include:\n• Pre-Fabricated Building Design & Supply (EPC Solutions)\n• Large Span Steel Structures\n• U-Tub Girder Mold Design & Supply\n• Custom Steel Molds for Precast Concrete Panels\n\nWith the support of our international partners, we deliver high-quality and cost-effective solutions."
     }
