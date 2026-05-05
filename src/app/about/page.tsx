@@ -123,7 +123,7 @@ const AboutPage = () => {
                                         "With decades of visionary leadership in engineering and infrastructure development, our CEO has been the driving force behind Tech Tronix Solutions' commitment to excellence, innovation, and international standards. Dedicated to building future-ready infrastructure, his strategic insight ensures every project delivers long-term value and unwavering quality."
                                     </p>
                                     <div className="border-t border-slate-100 pt-6">
-                                        <h3 className="text-[26px] font-serif font-bold text-[#1b1b1b] tracking-tight">Muhammad Ali</h3>
+                                        <h3 className="text-[26px] font-serif font-bold text-[#1b1b1b] tracking-tight"></h3>
                                         <p className="text-[14px] font-bold text-[#4E9CE4] tracking-widest uppercase mt-1">Chief Executive Officer</p>
                                     </div>
                                 </div>

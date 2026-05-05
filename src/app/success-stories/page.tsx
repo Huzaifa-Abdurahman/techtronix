@@ -448,7 +448,7 @@ export default function SuccessStoriesPage() {
                                 {marqueeCompanies.map((company, index) => (
                                     <div
                                         key={`${company.src}-${index}`}
-                                        className="relative h-20 w-44 shrink-0 flex items-center justify-center grayscale transition-all duration-500 hover:grayscale-0 hover:scale-110"
+                                        className="relative h-20 w-44 shrink-0 flex items-center justify-center transition-all duration-500 hover:scale-110"
                                     >
                                         <Image
                                             src={company.src}

@@ -116,12 +116,17 @@ const ContactPage = () => {
                             {
                                 icon: PhoneIcon,
                                 label: 'Phone',
-                                value: '+92311-0757620',
+                                value: '+92 4235230786',
+                            },
+                            {
+                                icon: PhoneIcon,
+                                label: 'Fax',
+                                value: '+92 4235230785',
                             },
                             {
                                 icon: MapPinIcon,
                                 label: 'Head Office',
-                                value: '102 B OPF, Khayaban e Jinnah, Lahore, Pakistan.',
+                                value: '102 B OPF Housing Scheme, Lahore, Pakistan.',
                             }
                         ]}
                     >
@@ -181,15 +186,15 @@ const ContactPage = () => {
                             <div className="space-y-4 relative z-10 flex-1">
                                 <div className="flex items-start gap-3">
                                     <MapPinIcon size={18} className="text-[#4E9CE4] shrink-0 mt-0.5" />
-                                    <p className="text-[14px] text-slate-600 font-medium">102 B OPF, Khayaban e Jinnah, Lahore, Pakistan.</p>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <UserIcon size={18} className="text-[#4E9CE4] shrink-0" />
-                                    <p className="text-[14px] text-slate-600 font-medium">Engr.Ahmad Hassan  (BIM structure Engineer)</p>
+                                    <p className="text-[14px] text-slate-600 font-medium">102 B OPF Housing Scheme , Lahore, Pakistan.</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <PhoneIcon size={18} className="text-[#4E9CE4] shrink-0" />
-                                    <p className="text-[14px] text-slate-600 font-medium">Phone: +92311-0757620</p>
+                                    <p className="text-[14px] text-slate-600 font-medium">Phone: +92 4235230786</p>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <PhoneIcon size={18} className="text-[#4E9CE4] shrink-0" />
+                                    <p className="text-[14px] text-slate-600 font-medium">Fax: +92 4235230785</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <MailIcon size={18} className="text-[#4E9CE4] shrink-0" />

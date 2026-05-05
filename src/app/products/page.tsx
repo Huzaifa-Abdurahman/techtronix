@@ -130,22 +130,7 @@ const ProductsPage = () => {
                     ))}
                 </div>
 
-                <FadeIn delay={100} className="mb-12 mt-24 text-center md:text-left">
-                    <h2 className="text-[32px] md:text-[42px] font-serif font-bold text-[#1b326b] tracking-tight mb-2 hover:text-[#4E9CE4] transition-colors duration-500">
-                        Engineering Services
-                    </h2>
-                    <p className="text-[17px] text-[#2d3748] font-medium leading-relaxed max-w-4xl">
-                        Expert construction management, BIM design, precision surveying, and structural engineering services.
-                    </p>
-                </FadeIn>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl">
-                    {products.filter(p => ['new-5', 'new-6', 'new-7', 'new-8'].includes(p.id)).map((product, idx) => (
-                        <FadeIn key={product.id} delay={100 + (idx * 50)} className="w-full">
-                            <NewServiceCard product={product} />
-                        </FadeIn>
-                    ))}
-                </div>
             </section>
 
             {/* --- CTA BANNER --- */}
