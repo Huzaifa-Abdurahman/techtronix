@@ -345,14 +345,25 @@ const projectHighlights = [
         ]
     },
     {
-        title: "Dual Fired Burner (Oil/Biogas) System",
-        slug: "dual-fired-burner",
-        images: ["/Crystalline Chemical Industries.JPG"],
+        title: "Supply & Training of Under Bridge Inspection Unit",
+        slug: "under-bridge-inspection-unit",
+        images: ["/s&p.jpg"],
         details: [
-            { label: "Client", value: "Crystalline Chemical Industries" },
-            { label: "Capacity", value: "20 TPH Boiler" },
-            { label: "Scope", value: "Supply, Installation & Training" },
-            { label: "Outcome", value: "Fuel Flexibility & Efficiency" }
+            { label: "Client", value: "National Highway Authority (NHA)" },
+            { label: "Category", value: "Bridge Inspection Equipment" },
+            { label: "Solution Provided", value: "Heavy-duty Under Bridge Inspection Unit" },
+            { label: "Key Features", value: "Allows maintenance crews to safely access and inspect all parts of bridge structures, including girders, soffits, and piers" },
+            { label: "Outcome", value: "Supports NHA's commitment to infrastructure safety and preventive maintenance across national highways." }
+        ]
+    },
+    {
+        title: "Supply, Installation & Training of Ground Penetrating Radar",
+        slug: "ground-penetrating-radar",
+        images: ["/ground.jpg"],
+        details: [
+            { label: "Client", value: "Road Assets Management System, Punjab" },
+            { label: "Purpose", value: "Non-destructive testing for road layer thickness, rebar mapping, utility detection, and quality assurance." },
+            { label: "Impact", value: "Enhanced data-driven decision making for road asset management." }
         ]
     },
     {
@@ -369,7 +380,7 @@ const projectHighlights = [
     {
         title: "Fast Falling Weight Deflectometer (FWD)",
         slug: "fast-falling-weight-deflectometer",
-        images: ["/Supply, Installation & Training of Fast Falling Weight Deflectometer (FWD).JPG"],
+        images: ["/h3.jpeg"],
         details: [
             { label: "Client", value: "Road Assets Management System (RAMS), KPK" },
             { label: "Method", value: "Non-Destructive Testing (NDT)" },

@@ -203,15 +203,17 @@ Types of Geonets:
         name: "Highways",
         slug: "highways",
         description: "We provide advanced Highway Engineering Solutions, including Non-Destructive Testing (NDT) Equipment and Intelligent Transportation Systems (ITS) for efficient traffic management.",
-        image: "/highway.jpg",
-        fullDescription: "We provide advanced Highway Engineering Solutions, including Non-Destructive Testing (NDT) Equipment and Intelligent Transportation Systems (ITS) for efficient traffic management.\n\nOur Solutions Include:\n• Falling Weight Deflectometer (FWD)\n• Rolling Dynamic Deflectometer (RDD)\n• Laser Crack Measurement System\n• Laser Profilometer\n• Traffic Counters\n• AI-Based Traffic Counting & Classification Systems"
+        image: "/h1.jpeg",
+        images: ["/h1.jpeg", "/h2.jpeg", "/h3.jpeg", "/h4.jpeg"],
+        fullDescription: "We provide advanced Highway Engineering Solutions, including Non-Destructive Testing (NDT) Equipment and Intelligent Transportation Systems (ITS) for efficient traffic management.\n\nOur Solutions Include:\n• Supply, Installation & Training of Ground Penetrating Radar\n• Supply & Training of Under Bridge Inspection Unit\n• KUAB FWD 50"
     },
     {
         id: "new-2",
         name: "Geosynthetics",
         slug: "geosynthetics",
         description: "We specialize in Geosynthetic Solutions for infrastructure projects such as MSE walls, landfill capping, and slope stabilization.",
-        image: "/geogrid-1.JPG",
+        image: "/g1.jpeg",
+        images: ["/g1.jpeg", "/g2.jpeg", "/g3.jpeg"],
         fullDescription: "We specialize in Geosynthetic Solutions for infrastructure projects such as MSE walls, landfill capping, and slope stabilization.\n\nOur Product Range:\n• HDPE Geogrids (Biaxial & Uniaxial)\n• Geotextiles\n• Geobags\n• Geonets\n• Triplanar Geonets\n• Geofilters"
     },
     {
@@ -219,7 +221,7 @@ Types of Geonets:
         name: "Solid & Liquid Waste Treatment",
         slug: "solid-liquid-waste-treatment",
         description: "We provide specialized equipment and solutions for solid waste management and wastewater treatment systems.",
-        image: "/Waste Water Treatment System.JPG",
+        image: "/solid.jpeg",
         fullDescription: "We provide specialized equipment and solutions for solid waste management and wastewater treatment systems.\n\nOur Offerings:\n• Solid Waste Incinerators\n• Solid Waste Separators\n• Leachate Treatment Systems\n• Landfill Gas (LFG) Collection & Flare Systems\n• Leachate Pumps"
     },
     {
@@ -227,39 +229,40 @@ Types of Geonets:
         name: "General Engineering Items",
         slug: "general-engineering-items",
         description: "We provide sourcing of high-quality engineering products for clients in the industrial and power sectors, tailored to their specific requirements.",
-        image: "/eng.jpg",
+        image: "/hv.jpeg",
+        images: ["/hv.jpeg", "/lv.jpeg"],
         fullDescription: "We offer a wide range of engineering products and infrastructure solutions.\n\nOur Supplies Include:\n• 132 kV Grid Station Equipment\n• Steel Molds\n• Structural Steel Members\n• Power Cables\n• Computer Servers"
     },
     {
         id: "new-5",
         name: "Construction Management & Execution Services",
         slug: "construction-management-execution",
-        description: "We provide comprehensive construction management and execution services for specialized infrastructure projects.",
-        image: "/krane.png",
-        fullDescription: "We provide comprehensive construction management and execution services for specialized infrastructure projects.\n\nOur expertise includes:\n• MSE Wall Construction\n• Landfill Gas Collection System Installation\n• Waste Treatment Plant Installation\n• Installation of Specialized Engineering Products\n\nUsing advanced project management software, we efficiently handle large-scale construction projects and provide complete back-office support to our clients."
+        description: "We offer flexible and comprehensive construction management services tailored to the specific needs of each project.",
+        image: "/s1.jpeg",
+        fullDescription: "At Tech Tronix Solutions (TTS), we offer flexible and comprehensive construction management services tailored to the specific needs of each project. Our scope covers the entire project lifecycle, from basic documentation and planning support to detailed site execution drawings and final as-built completion drawings. We can manage complete project delivery or contribute to specific phases, including back-office documentation, project coordination, and on-site execution management.\n\nOur approach is driven by Digital Construction Management, integrating modern tools for planning, coordination, and real-time project control. Through Smart Planning & Cost Control, we optimize resources, reduce delays, and improve project efficiency. We ensure strict Quality Assurance & Technical Monitoring to maintain compliance with standards and deliver reliable outcomes. In addition, Technology-Driven Site Supervision enhances on-site accuracy, productivity, and informed decision-making throughout the execution phase.\n\nWhether acting as a full project partner or providing targeted support, we ensure precision, efficiency, and professionalism at every stage of the project lifecycle.\n\n• Digital Construction Management\n• Smart Planning & Cost Control\n• Quality Assurance & Technical Monitoring\n• Technology-Driven Site Supervision"
     },
     {
         id: "new-6",
-        name: "BIM Design & Clash Detection Services",
+        name: "BIM Services",
         slug: "bim-design-clash-detection",
-        description: "We have a team of experienced civil engineers Specialized in Building Information Modeling (BIM).",
-        image: "/i2.jpg",
-        fullDescription: "We have a team of experienced civil engineers Specialized in Building Information Modeling (BIM).\n\nOur services include:\n• BIM Modeling\n• Clash Detection & Coordination\n• Scan-to-BIM Services\n\nWe ensure accurate design integration and minimize on-site conflicts through advanced BIM tools."
+        description: "We deliver advanced digital design and coordination solutions for modern construction projects using Building Information Modeling (BIM).",
+        image: "/s2.jpeg",
+        fullDescription: "At Tech Tronix Solutions (TTS), we have a dedicated team of experienced civil engineers specialized in Building Information Modeling (BIM), delivering advanced digital design and coordination solutions for modern construction projects. Our BIM expertise enables us to develop intelligent 3D models that improve design accuracy, enhance collaboration among stakeholders, and support efficient project planning and execution. By integrating engineering knowledge with digital technologies, we help clients reduce design conflicts, optimize resources, and improve overall project outcomes from concept to completion.\n\nWithin the BIM domain, we provide a range of specialized services including 3D modeling, clash detection and coordination, construction sequencing (4D), cost integration (5D), quantity take-offs, shop drawings, and as-built modeling for project handover and facility management support.\n\nKey BIM Services:\n• 3D Architectural, Structural & MEP Modeling\n• Clash Detection and Multi-Discipline Coordination\n• Construction Sequencing & Project Visualization\n• Quantity Take-offs, Shop Drawings & As-Built Modeling"
     },
     {
         id: "new-7",
-        name: "Surveying & Photogrammetry Services",
+        name: "Surveying & Modelling Services",
         slug: "surveying-photogrammetry",
-        description: "Our expert surveying team provides accurate and reliable data for infrastructure projects.",
-        image: "/i4.jpg",
-        fullDescription: "Our expert surveying team provides accurate and reliable data for infrastructure projects.\n\nOur capabilities include:\n• Large Area Land Surveying\n• Photogrammetry Surveys\n• 3D Modeling of Infrastructure & Buildings\n• Pavement Condition Surveys"
+        description: "Our Surveying & Photogrammetry services provide high-resolution aerial surveys and integrated 3D scanning for infrastructure and buildings.",
+        image: "/s3.jpeg",
+        fullDescription: "At Tech Tronix Solutions (TTS), our Surveying & Photogrammetry services are focused on two key advanced domains. We provide Oblique Drone Photogrammetry for Urban Modeling, delivering high-resolution aerial surveys that generate detailed 3D urban landscape models for cities and large-scale environments. For buildings and structures, we offer Integrated Building 3D Scanning, combining oblique photogrammetry with handheld LiDAR scanning to produce precise and complete digital twins for design, analysis, and asset management.\n\nIn the field of transportation infrastructure, we specialize in Advanced Highway Condition Assessment using laser scanning, AI-based imaging systems, Ground Penetrating Radar (GPR), and Falling Weight Deflectometer (FWD) testing. This enables Data-Driven Infrastructure Diagnostics, providing comprehensive structural evaluation and condition monitoring of roads and bridges to support maintenance planning, rehabilitation strategies, and long-term asset management decisions.\n\nKey Services:\n• Oblique Drone Photogrammetry for Urban Modeling\n• Integrated Building 3D Scanning\n• Advanced Highway Condition Assessment\n• Data-Driven Infrastructure Diagnostics"
     },
     {
         id: "new-8",
         name: "Steel Structures and Steel Formwork",
         slug: "steel-structure-design-mold-engineering",
-        description: "We provide advanced, cutting-edge engineering products and equipment for diverse industrial requirements.",
-        image: "/i7.jpg",
-        fullDescription: "We offer complete solutions for steel structures and heavy mold design & supply.\n\nOur services include:\n• Pre-Fabricated Building Design & Supply (EPC Solutions)\n• Large Span Steel Structures\n• U-Tub Girder Mold Design & Supply\n• Custom Steel Molds for Precast Concrete Panels\n\nWith the support of our international partners, we deliver high-quality and cost-effective solutions."
+        description: "We specialize in delivering advanced engineering solutions in steel structures and steel formwork systems.",
+        image: "/s4.jpeg",
+        fullDescription: "At Tech Tronix Solutions, we specialize in delivering advanced engineering solutions in steel structures and steel formwork systems, developed through close coordination between our in-house design team and international suppliers from China and the Middle East, who execute full EPC (Engineering, Procurement & Construction) for these specialized works. This integrated approach allows us to align innovative design concepts with global fabrication capabilities, ensuring efficient, reliable, and high-quality execution of complex engineering projects.\n\nOur partners deliver turnkey EPC solutions for major steel works, including precision-engineered steel molds for casting U-Tub girders and transoms, as well as large-scale tubular dome structures. In addition, they provide advanced electrical retractable roof systems for large arenas, combining structural, mechanical, and electrical engineering expertise to meet international standards for stadium and mega infrastructure developments.\n\nKey Services:\n• Coordinated Design & EPC Delivery of Large-Scale Steel Formwork Systems (U-Tub Girders & Transoms)\n• Turnkey Engineering Solutions for Complex Structural Steel Fabrication Projects\n• Design-Integrated EPC Execution of Large Tubular Dome Structures\n• Electrical Retractable Roof Systems for Stadiums & Large Arenas"
     }
 ];

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Activity, Map, Recycle, Zap, Construction, Building2, Ruler, Cog } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { products } from '@/data/products';
 
 // Custom hook for scroll animation
@@ -35,39 +35,64 @@ const FadeIn = ({ children, delay = 0, className = '' }: { children: React.React
     );
 }
 
-const getIcon = (id: string) => {
-    switch (id) {
-        case 'new-1': return Activity;
-        case 'new-2': return Map;
-        case 'new-3': return Recycle;
-        case 'new-4': return Zap;
-        case 'new-5': return Construction;
-        case 'new-6': return Building2;
-        case 'new-7': return Ruler;
-        case 'new-8': return Cog;
-        default: return Activity;
-    }
+const AutoCarousel = ({ images, name }: { images: string[], name: string }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [images]);
+
+    return (
+        <div className="relative w-full h-full">
+            {images.map((img, idx) => (
+                <div
+                    key={idx}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+                >
+                    <Image
+                        src={img}
+                        alt={`${name} - Image ${idx + 1}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
+            ))}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+                {images.map((_, idx) => (
+                    <div
+                        key={idx}
+                        className={`h-1.5 transition-all duration-300 rounded-full ${idx === currentIndex ? 'w-6 bg-white' : 'w-1.5 bg-white/50'}`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
 }
 
 const NewServiceCard = ({ product }: { product: any }) => {
-    const Icon = getIcon(product.id);
-
     return (
-        <Link href={`/products/${product.slug}`} className="bg-slate-50 rounded-lg p-6 md:p-8 flex flex-col h-full group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-slate-200">
-            <div className="w-14 h-14 rounded-full border border-[#1b326b] flex items-center justify-center shrink-0 mb-6 bg-white group-hover:bg-[#1b326b] transition-colors duration-300">
-                <Icon size={24} className="text-[#1b326b] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+        <Link href={`/products/${product.slug}`} className="bg-white/70 backdrop-blur-md border border-white/50 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col cursor-pointer group block overflow-hidden hover:-translate-y-1">
+            <div className="relative w-full h-[240px] overflow-hidden">
+                {product.images && product.images.length > 1 ? (
+                    <AutoCarousel images={product.images} name={product.name} />
+                ) : (
+                    <Image src={product.image} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                )}
+                <div className="absolute inset-0 bg-[#1b326b]/10 mix-blend-overlay"></div>
             </div>
-
-            <h3 className="text-[19px] font-semibold text-[#1b326b] mb-4 font-sans leading-tight">
-                {product.name}
-            </h3>
-
-            <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-8 flex-1">
-                {product.description}
-            </p>
-
-            <div className="mt-auto inline-flex items-center gap-2 text-[14px] font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors">
-                Read More <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
+            <div className="p-8 flex flex-col flex-1 bg-white">
+                <h3 className="text-[19px] font-semibold text-[#1b326b] mb-4 font-sans leading-tight">
+                    {product.name}
+                </h3>
+                <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-8 flex-1">
+                    {product.description}
+                </p>
+                <div className="inline-flex items-center gap-2 text-[14px] font-bold text-[#1b326b] group-hover:text-[#4E9CE4] transition-colors mt-auto">
+                    Read More <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
+                </div>
             </div>
         </Link>
     );

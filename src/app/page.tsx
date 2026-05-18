@@ -69,7 +69,7 @@ const coreServices = [
     },
     {
         title: "GEO-SYNTHETICS",
-        description: "Specialized in geosynthetics, especially for MSE walls, landfill capping, and slope stabilization solutions.",
+        description: "Geosynthetics, especially for MSE walls, landfill capping, and slope stabilization solutions.",
         icon: Shield,
         items: [
             "Geogrids",
@@ -81,8 +81,8 @@ const coreServices = [
         ]
     },
     {
-        title: "WASTE WATER",
-        description: "We provide specialized equipment and products for solid waste land treatment and liquid wastewater treatment.",
+        title: "Solid Waste & Wastewater",
+        description: "We provide equipment and products for solid waste land treatment and liquid wastewater treatment.",
         icon: Activity,
         items: [
             "Landfill Design & Engineering",
@@ -94,7 +94,7 @@ const coreServices = [
     },
     {
         title: "GENERAL",
-        description: "We provide specialized engineering solutions along with a range of advanced equipment.",
+        description: "We provide engineering solutions along with a range of advanced equipment.",
         icon: FileText,
         items: [
             "Special Engineering Services solutions",
@@ -257,7 +257,7 @@ const App = () => {
 
                         {/* Right: Image */}
                         <FadeIn delay={200} className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-t-xl overflow-hidden lg:translate-y-[1px]">
-                            <Image src="/w1.png" alt="Why Choose Us" fill className="object-cover object-center" />
+                            <Image src="/why.jpeg" alt="Why Choose Us" fill className="object-cover object-center" />
                         </FadeIn>
                     </div>
 

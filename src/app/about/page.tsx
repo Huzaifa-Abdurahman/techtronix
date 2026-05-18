@@ -74,7 +74,7 @@ const AboutPage = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <FadeIn delay={100} className="relative aspect-square md:aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group border border-[#CED6DE]/30">
-                            <Image src="/i1.jpg" alt="Company Operations" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <Image src="/a1.jpeg" alt="Company Operations" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                             <div className="absolute inset-0 bg-[#4E9CE4]/10 group-hover:bg-transparent transition-colors duration-500"></div>
                             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#CED6DE] rounded-full blur-3xl opacity-50 z-[-1]"></div>
                         </FadeIn>
@@ -87,16 +87,19 @@ const AboutPage = () => {
 
                             <div className="space-y-5 text-[15px] md:text-[16px] text-slate-600 leading-relaxed font-medium">
                                 <p>
-                                    Tech Tronix Solutions (TTS) is a multi-disciplinary engineering and technology company delivering integrated solutions across construction, design, digital infrastructure, and advanced technology services.
+                                    At Tech Tronix Solutions, we deliver innovative engineering and technology solutions by integrating advanced equipment, modern materials, and cutting-edge software to meet client requirements and overcome complex engineering challenges. Our focus is to improve project efficiency, optimize construction processes, and reduce overall project costs.
                                 </p>
                                 <p>
-                                    We empower comprehensive service delivery providing expertise in engineering systems, precision master planning, infrastructure networks, and core execution management. Our operations encompass structural systems, digital infrastructure, construction management, and rigorous project optimization ensuring seamless technological integration and standard execution methodologies.
+                                    As a multi-disciplinary engineering company, we work closely with clients to provide practical, reliable, and cost-effective solutions tailored to each project. Our expertise covers design, engineering, testing, and project management services using the latest engineering tools, survey equipment, and in-house design capabilities to enhance performance and minimize construction issues during execution.
                                 </p>
                                 <p>
-                                    Adhering strictly to international standards—ACI, AASHTO, Eurocodes—we establish robust partnerships and precise project records. Tech Tronix Solutions offers specialized capabilities including infrastructure advancement, highways, industrial projects, power sector, oil & gas, rail & transit, and robust commercial developments.
+                                    We also provide state-of-the-art testing equipment with globally proven performance and internationally adopted testing practices, helping clients achieve accurate results while saving valuable project time.
                                 </p>
                                 <p>
-                                    We are driven by science methodologies and committed to excellence, integrity, and operational enhancements. From intricate project management, environmental engineering, geotechnical services, and detailed design, to construction operations—we champion pioneering practices, resilience, and highly-adaptive project technologies.
+                                    Through strong partnerships with leading international manufacturers and suppliers, we customize engineering materials and equipment to suit local standards, construction practices, and workforce capabilities.
+                                </p>
+                                <p>
+                                    At TechTronix Solutions, our mission is to transform engineering challenges into efficient, practical, and sustainable solutions.
                                 </p>
                             </div>
                         </FadeIn>

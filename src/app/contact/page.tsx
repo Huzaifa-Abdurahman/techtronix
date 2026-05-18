@@ -120,8 +120,8 @@ const ContactPage = () => {
                             },
                             {
                                 icon: PhoneIcon,
-                                label: 'Fax',
-                                value: '+92 4235230785',
+                                label: 'Phone',
+                                value: '04232329365',
                             },
                             {
                                 icon: MapPinIcon,
@@ -194,7 +194,7 @@ const ContactPage = () => {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <PhoneIcon size={18} className="text-[#4E9CE4] shrink-0" />
-                                    <p className="text-[14px] text-slate-600 font-medium">Fax: +92 4235230785</p>
+                                    <p className="text-[14px] text-slate-600 font-medium">Phone: 04232329365</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <MailIcon size={18} className="text-[#4E9CE4] shrink-0" />

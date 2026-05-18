@@ -95,7 +95,7 @@ const ServicesPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                     {products.filter(p => ["new-5", "new-6", "new-7", "new-8"].includes(p.id)).map((service, index) => (
                         <FadeIn delay={100 * (index + 1)} className="w-full" key={service.id}>
-                            <a href={`/products/${service.slug}`} className="bg-white/70 backdrop-blur-md border border-white/50 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col cursor-pointer group block overflow-hidden hover:-translate-y-1">
+                            <a href={`/services/${service.slug}`} className="bg-white/70 backdrop-blur-md border border-white/50 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col cursor-pointer group block overflow-hidden hover:-translate-y-1">
                                 <div className="relative w-full h-[240px] overflow-hidden">
                                     <Image src={service.image} alt={service.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                                     <div className="absolute inset-0 bg-[#1b326b]/10 mix-blend-overlay"></div>
