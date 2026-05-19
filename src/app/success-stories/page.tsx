@@ -336,7 +336,7 @@ const projectHighlights = [
     {
         title: "Biogas Flare & Wastewater Treatment System",
         slug: "biogas-flare-wastewater-treatment-ruda",
-        images: ["/Supply of Biogas Flare System & Wastewater Treatment System – RUDA.JPG"],
+        images: ["/burner.jpeg"],
         details: [
             { label: "Client", value: "Ravi Urban Development Authority (RUDA)" },
             { label: "System 1", value: "Biogas Flare System" },
