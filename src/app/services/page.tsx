@@ -67,7 +67,7 @@ const ServicesPage = () => {
 
                 <FadeIn className="max-w-[800px] w-full mt-4 md:mt-8 px-4 md:px-8">
                     <h1 className="text-[40px] md:text-[55px] lg:text-[70px] font-sans font-medium leading-[1.1] tracking-tight text-white mb-6 text-left drop-shadow-md">
-                        Our Solutions
+                        Our Services
                     </h1>
                     <p className="text-[16px] md:text-[20px] font-medium leading-relaxed text-blue-50 mb-10 max-w-[650px] text-left drop-shadow-sm">
                         Advanced, precision engineering solutions for<br className="hidden md:block" />
