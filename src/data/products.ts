@@ -239,7 +239,7 @@ Driven by our specialized technical staff, we ensure seamless project execution 
         slug: "geosynthetics",
         description: "We specialize in Geosynthetic Solutions for infrastructure projects such as MSE walls, landfill capping, and slope stabilization.",
         image: "/g1.jpeg",
-        images: ["/g1.jpeg", "/g2.jpeg", "/g3.jpeg"],
+        images: ["/g1.jpeg", "/g2.jpeg", "/g3.jpeg", "/g4.jpeg"],
         fullDescription: `High-Performance Engineering Materials & Solutions for Infrastructure
 At TechTronix, we proudly represent BOSTD Geosynthetics in Pakistan, delivering an advanced, world-class portfolio of materials engineered to tackle complex soil reinforcement, drainage, and erosion control challenges across the region’s expanding transportation, municipal, environmental, and industrial sectors. Designed to handle the most demanding structural and environmental conditions, our systems offer sustainable, cost-effective alternatives to traditional civil engineering methods. Backed by an extensive global track record—with specialized expertise in custom-engineering Mechanically Stabilized Earth (MSE) walls—we possess the comprehensive capacity to design customized products, tensile strengths, and section layouts tailored strictly to your project’s unique engineering and site constraints.
 Our key Products
@@ -262,7 +262,7 @@ Our lifecycle partnership begins with Tailored Product Selection & Engineering D
     },
     {
         id: "new-3",
-        name: "Solid & Liquid Waste Treatment",
+        name: "Solid Waste & Wastewater",
         slug: "solid-liquid-waste-treatment",
         description: "We provide specialized equipment and solutions for solid waste management and wastewater treatment systems.",
         image: "/solid.jpeg",
