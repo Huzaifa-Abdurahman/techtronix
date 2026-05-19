@@ -66,7 +66,7 @@ export function Navbar() {
                 {/* Left: Logo */}
                 <Link href="/" className="flex items-center z-[110] px-2 md:px-4" style={{ margin: '-2px 0' }}>
                     <Image
-                        src="/l7.jpg"
+                        src="/l7.JPG"
                         alt="Tech-Tronix Solutions"
                         width={300}
                         height={110}
