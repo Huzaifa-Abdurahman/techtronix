@@ -347,7 +347,7 @@ const projectHighlights = [
     {
         title: "Supply & Training of Under Bridge Inspection Unit",
         slug: "under-bridge-inspection-unit",
-        images: ["/s&p.jpg"],
+        images: ["/s&p.JPG"],
         details: [
             { label: "Client", value: "National Highway Authority (NHA)" },
             { label: "Category", value: "Bridge Inspection Equipment" },
@@ -359,14 +359,13 @@ const projectHighlights = [
     {
         title: "Supply, Installation & Training of Ground Penetrating Radar",
         slug: "ground-penetrating-radar",
-        images: ["/ground.jpg"],
+        images: ["/ground.JPG"],
         details: [
             { label: "Client", value: "Road Assets Management System, Punjab" },
             { label: "Purpose", value: "Non-destructive testing for road layer thickness, rebar mapping, utility detection, and quality assurance." },
             { label: "Impact", value: "Enhanced data-driven decision making for road asset management." }
         ]
-    },
-    {
+    },    {
         title: "Profilograph Installation & Training",
         slug: "profilograph",
         images: ["/Supply, Installation & Training of Profilograph.JPG"],
@@ -536,7 +535,7 @@ export default function SuccessStoriesPage() {
                                         </div>
 
                                         <a 
-                                            href={`/products/${project.slug}`}
+                                            href={`/products/${project.slug}?from=success-stories`}
                                             className="inline-flex items-center gap-2 text-[#1b326b] font-bold text-[15px] group/link hover:text-[#4E9CE4] transition-colors"
                                         >
                                             View Project Details

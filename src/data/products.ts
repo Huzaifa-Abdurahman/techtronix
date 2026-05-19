@@ -6,6 +6,7 @@ export interface Product {
     image: string;
     images?: string[];
     fullDescription: string;
+    features?: string[];
 }
 
 export const products: Product[] = [
@@ -79,15 +80,25 @@ export const products: Product[] = [
         slug: "ground-penetrating-radar",
         description: "Non-destructive, high-speed road scanning for pavement structure evaluation and subsurface defect detection.",
         image: "/gpr_vehicle.jpg",
-        fullDescription: "Ground Penetrating Radar (GPR) for road scanning is a non-destructive, high-speed, and cost-effective method used to evaluate pavement structure, determine layer thicknesses, and identify subsurface defects such as voids, moisture, and delamination. Road-specific GPR systems use high-frequency antennas (1–2 GHz) mounted on vehicles, enabling data collection at traffic speeds up to 80 km/h without disrupting flow. Key applications include: Pavement Thickness Mapping (accurate measurement of asphalt, base, and subbase layers), Void & Cavity Detection (identifying dangerous air gaps beneath pavement), Moisture Detection (locating areas of high moisture susceptibility contributing to pavement failure), and Forensic Surveys (analyzing existing road conditions to determine causes of damage). The system uses specialized software like RADAN 7 or ROAD Doctor to interpret and map data. Antennas range from 1 GHz to 2 GHz for high-resolution imaging, and the vehicle-mounted, air-launched, horn-antenna systems allow for safe, rapid, non-contact data acquisition."
+        fullDescription: `Client: Road Assets Management System, Punjab`,
+        features: [
+            "Purpose: Non-destructive testing for road layer thickness, rebar mapping, utility detection, and quality assurance.",
+            "Impact: Enhanced data-driven decision making for road asset management."
+        ]
     },
     {
         id: "10",
         name: "Under Bridge Inspection Vehicle (Platform Type)",
-        slug: "under-bridge-inspection-vehicle",
+        slug: "under-bridge-inspection-unit",
         description: "High-performance under-bridge access platform for bridge inspection, repair, maintenance, and structural assessment.",
         image: "/bridge_inspection_vehicle.jpg",
-        fullDescription: "The Platform Type Bridge Inspection Vehicle is a high-performance under-bridge access platform designed for bridge inspection, repair, maintenance, and structural assessment. Ideal for highway bridges, flyovers, metro bridges, canal bridges, steel bridges, and concrete structures. Key Features: High-strength steel + aluminum structure, 600 kg heavy platform capacity, German NBB wireless remote, imported hydraulic system, video monitoring + intercom, emergency hydraulic retract, operating range -20°C to +50°C, and fast inspection speed of 15 m/min. Technical Specifications: Horizontal Reach 15m/16m/18m/22m (variable reach platforms available), Load Capacity 600 kg, Drive 6x4, Fuel Diesel, Emission Euro 5, Max Speed 90 km/h. Safety Features include hydraulic locking cylinders, emergency pump system, emergency stop switch, stabilizer cylinders, mechanical vertical truss lock, and safety circuit interlock. Applications: Bridge structural inspections, bearing inspections, crack surveys, under deck repair, cable bridge inspection, and night bridge maintenance."
+        fullDescription: `Client: National Highway Authority (NHA)
+Category: Bridge Inspection Equipment
+Solution Provided: Heavy-duty Under Bridge Inspection Unit`,
+        features: [
+            "Key Features: Allows maintenance crews to safely access and inspect all parts of bridge structures, including girders, soffits, and piers",
+            "Outcome: Supports NHA's commitment to infrastructure safety and preventive maintenance across national highways."
+        ]
     },
     {
         id: "11",
@@ -205,7 +216,22 @@ Types of Geonets:
         description: "We provide advanced Highway Engineering Solutions, including Non-Destructive Testing (NDT) Equipment and Intelligent Transportation Systems (ITS) for efficient traffic management.",
         image: "/h1.jpeg",
         images: ["/h1.jpeg", "/h2.jpeg", "/h3.jpeg", "/h4.jpeg"],
-        fullDescription: "We provide advanced Highway Engineering Solutions, including Non-Destructive Testing (NDT) Equipment and Intelligent Transportation Systems (ITS) for efficient traffic management.\n\nOur Solutions Include:\n• Supply, Installation & Training of Ground Penetrating Radar\n• Supply & Training of Under Bridge Inspection Unit\n• KUAB FWD 50"
+        fullDescription: `TechTronix Solutions provides advanced Highway Engineering Solutions by integrating cutting-edge Non-Destructive Testing (NDT) Equipment and Intelligent Transportation Systems (ITS) for efficient traffic management. Our comprehensive technology portfolio features industry-leading diagnostics and monitoring systems, including some main
+Falling Weight Deflectometer (FWD), 
+Laser Based Rolling Dynamic Deflectometer (LDD), 
+Ground Penetrating Radar (GPR),
+ Laser Crack Measurement System (LCMS), 
+Laser Profilometer, Retroreflectometers, 
+Weigh-in-Motion (WIM) Systems, 
+Under Bridge Inspection Unit
+traditional Traffic Counters, and AI-Based Traffic Counting & Classification Systems. 
+Driven by our specialized technical staff, we ensure seamless project execution through a complete lifecycle partnership encompassing tailored technical sales, certified hands-on operator training, precision maintenance and calibration, and responsive after-sales technical support.`,
+        features: [
+            "Technical Advise for selection",
+            "Certified Hands-On Training:",
+            "Precision Maintenance & Calibration:",
+            "Responsive After-Sales Technical Assistance:"
+        ]
     },
     {
         id: "new-2",
@@ -214,7 +240,25 @@ Types of Geonets:
         description: "We specialize in Geosynthetic Solutions for infrastructure projects such as MSE walls, landfill capping, and slope stabilization.",
         image: "/g1.jpeg",
         images: ["/g1.jpeg", "/g2.jpeg", "/g3.jpeg"],
-        fullDescription: "We specialize in Geosynthetic Solutions for infrastructure projects such as MSE walls, landfill capping, and slope stabilization.\n\nOur Product Range:\n• HDPE Geogrids (Biaxial & Uniaxial)\n• Geotextiles\n• Geobags\n• Geonets\n• Triplanar Geonets\n• Geofilters"
+        fullDescription: `High-Performance Engineering Materials & Solutions for Infrastructure
+At TechTronix, we proudly represent BOSTD Geosynthetics in Pakistan, delivering an advanced, world-class portfolio of materials engineered to tackle complex soil reinforcement, drainage, and erosion control challenges across the region’s expanding transportation, municipal, environmental, and industrial sectors. Designed to handle the most demanding structural and environmental conditions, our systems offer sustainable, cost-effective alternatives to traditional civil engineering methods. Backed by an extensive global track record—with specialized expertise in custom-engineering Mechanically Stabilized Earth (MSE) walls—we possess the comprehensive capacity to design customized products, tensile strengths, and section layouts tailored strictly to your project’s unique engineering and site constraints.
+Our key Products
+Uniaxial Geogrids: 
+Biaxial Geogrids 
+Triaxial & Multi-Axial Geogrids 
+Geocells:.
+E'DRAIN Geonets & Geocomposites: 
+Geo-tube Dehydration & Solidification Bags: 
+Asphalt Paving Grids & Geogrid-Nonwoven Geocomposites. 
+Geotextiles (Woven & Non-Woven) 
+Diversion Networks, HS Anti-Slide Mats, & Capillary Drainage Pipes
+Our lifecycle partnership begins with Tailored Product Selection & Engineering Design, where our technical staff analyzes site variables  and  Utilizing advanced software like MSEW+ (for Mechanically Stabilized Earth wall stability) and ReSSA+ (for reinforced slope stability evaluations), we custom engineer the project demands. We also provide On-Site Installation Supervision according to global standards. Furthermore, we deliver Certified Technical Staff & Workforce Training through hands-on workshops for engineers and contractors, ensuring proficiency in geosynthetic handling, proper placement. Concluding our workflow, we guarantee Seamless Project Implementation Support from initial diagnostics to final structural handover,`,
+        features: [
+            "Tailored Product Selection & Engineering Design",
+            "On-Site Installation Supervision:",
+            "Certified Technical Staff & Workforce Training:.",
+            "Seamless Project Implementation Support:"
+        ]
     },
     {
         id: "new-3",
@@ -222,7 +266,24 @@ Types of Geonets:
         slug: "solid-liquid-waste-treatment",
         description: "We provide specialized equipment and solutions for solid waste management and wastewater treatment systems.",
         image: "/solid.jpeg",
-        fullDescription: "We provide specialized equipment and solutions for solid waste management and wastewater treatment systems.\n\nOur Offerings:\n• Solid Waste Incinerators\n• Solid Waste Separators\n• Leachate Treatment Systems\n• Landfill Gas (LFG) Collection & Flare Systems\n• Leachate Pumps"
+        fullDescription: `Advanced Engineering Solutions for Landfill Management & Fluid Treatment
+At TechTronix, we provide specialized, high-performance equipment and integrated solutions engineered to address the complex requirements of solid waste management and advanced wastewater treatment systems. Navigating the modern environmental challenges of municipal and hazardous waste requires robust containment and treatment technologies; therefore, our core offerings focus extensively on complete landfill lining and site capping materials designed to prevent environmental contamination and manage critical lifecycles. Within the solid waste sector, our technology suite features high-capacity sorting systems alongside comprehensive landfill gas (LFG) recovery and fluid management systems to safeguard localized ecosystems, ensure regulatory compliance, and deliver total site safety.
+Our specialized product offerings include:
+Landfill Site Capping & Lining Materials: 
+Solid Waste Separators:.
+LFG Well Condensate Leachate Pneumatic Pumps: 
+LFG Collection System Boosters( Explosion Proof)
+LFG Purification Systems: 
+LFG Biogas Firing Systems: 
+Leachate Collection Pumps.
+Leachate Treatment Containerized Solutions: 
+Our service commitment features Site-Specific Product Selection to analyze geological, environmental, and chemical variables for a customized technical solution. We provide a Complete Implementation Methodology with step-by-step engineering and deployment guidelines for a flawless installation. Post-deployment, our Operational Services Support stays actively involved to smoothly integrate systems into daily workflows, while our ongoing Equipment Maintenance & Longevity protocols and troubleshooting maximize runtime and ensure long-term regulatory compliance.`,
+        features: [
+            "Site-Specific Product Selection:",
+            "Complete Implementation Methodology:",
+            "Operational Services Support:",
+            "Equipment Maintenance & Longevity:"
+        ]
     },
     {
         id: "new-4",
@@ -231,7 +292,25 @@ Types of Geonets:
         description: "We provide sourcing of high-quality engineering products for clients in the industrial and power sectors, tailored to their specific requirements.",
         image: "/hv.jpeg",
         images: ["/hv.jpeg", "/lv.jpeg"],
-        fullDescription: "We offer a wide range of engineering products and infrastructure solutions.\n\nOur Supplies Include:\n• 132 kV Grid Station Equipment\n• Steel Molds\n• Structural Steel Members\n• Power Cables\n• Computer Servers"
+        fullDescription: `Engineering Products
+Global Sourcing of Products and Innovative Technologies 
+Beside our featured sectors of services and products, we maintain an efficient engineering sourcing channel capable of procurement based on your specific requirements—even for products that do not fall within our specialized working sectors. We have successfully sourced many general products and solutions for our clients, selecting the most appropriate engineering product or solution that seamlessly fits with our local environmental conditions and the existing expertise of local construction manpower. By bridging the gap between cutting-edge global technology and localized on-site realities, we ease complex execution processes, accelerate project timelines, and lower operational life-cycle costs. Some of the key general solutions and products which we have sourced from international suppliers and successfully delivered include:
+Hydroseeding Services & Materials: 
+Amusement Park Equipment
+Colored Asphalt: 
+Polyurethane (PU) Coating for Concrete.
+Material Measuring Radars:
+Dc Chargers for EV
+BESS ( Battery Energy Storage System).
+HV LV systems.
+These are just some examples we can offer our sourcing services to clients to meet their needs for any specialized project need.
+Our global procurement framework is built on ensuring absolute value through Cost-Effectiveness, optimizing your project budget without sacrificing material grades. We partner exclusively with Reliable Manufacturers to guarantee that every piece of machinery and material meets international quality benchmarks and arrives with proven factory certifications. Recognizing the unique operational realities of our region, we select solutions that are perfectly Suitable to Local Conditions, ensuring seamless compatibility with regional environments, climates, and local manpower expertise. Ultimately, our sourcing strategy focuses on delivering Long-Term Benefits, providing durable assets, low maintenance requirements, and sustainable operational life-cycles for your investments.`,
+        features: [
+            "Cost Effectiveness",
+            "Reliable Manufactueres",
+            "Suitable to local conditions",
+            "Long Term Benefits."
+        ]
     },
     {
         id: "new-5",
@@ -239,7 +318,15 @@ Types of Geonets:
         slug: "construction-management-execution",
         description: "We offer flexible and comprehensive construction management services tailored to the specific needs of each project.",
         image: "/s1.jpeg",
-        fullDescription: "At Tech Tronix Solutions (TTS), we offer flexible and comprehensive construction management services tailored to the specific needs of each project. Our scope covers the entire project lifecycle, from basic documentation and planning support to detailed site execution drawings and final as-built completion drawings. We can manage complete project delivery or contribute to specific phases, including back-office documentation, project coordination, and on-site execution management.\n\nOur approach is driven by Digital Construction Management, integrating modern tools for planning, coordination, and real-time project control. Through Smart Planning & Cost Control, we optimize resources, reduce delays, and improve project efficiency. We ensure strict Quality Assurance & Technical Monitoring to maintain compliance with standards and deliver reliable outcomes. In addition, Technology-Driven Site Supervision enhances on-site accuracy, productivity, and informed decision-making throughout the execution phase.\n\nWhether acting as a full project partner or providing targeted support, we ensure precision, efficiency, and professionalism at every stage of the project lifecycle.\n\n• Digital Construction Management\n• Smart Planning & Cost Control\n• Quality Assurance & Technical Monitoring\n• Technology-Driven Site Supervision"
+        fullDescription: `At Tech Tronix Solutions (TTS), we offer flexible and comprehensive construction management services tailored to the specific needs of each project. Our scope covers the entire project lifecycle, from basic documentation and planning support to detailed site execution drawings and final as-built completion drawings. We can manage complete project delivery or contribute to specific phases, including back-office documentation, project coordination, and on-site execution management.
+Our approach is driven by Digital Construction Management, integrating modern tools for planning, coordination, and real-time project control. Through Smart Planning & Cost Control, we optimize resources, reduce delays, and improve project efficiency. We ensure strict Quality Assurance & Technical Monitoring to maintain compliance with standards and deliver reliable outcomes. In addition, Technology-Driven Site Supervision enhances on-site accuracy, productivity, and informed decision-making throughout the execution phase.
+Whether acting as a full project partner or providing targeted support, we ensure precision, efficiency, and professionalism at every stage of the project lifecycle.`,
+        features: [
+            "Digital Construction Management.",
+            "Smart Planning & Cost Control",
+            "Quality Assurance & Technical Monitoring.",
+            "Technology-Driven Site Supervision"
+        ]
     },
     {
         id: "new-6",
@@ -247,7 +334,15 @@ Types of Geonets:
         slug: "bim-design-clash-detection",
         description: "We deliver advanced digital design and coordination solutions for modern construction projects using Building Information Modeling (BIM).",
         image: "/s2.jpeg",
-        fullDescription: "At Tech Tronix Solutions (TTS), we have a dedicated team of experienced civil engineers specialized in Building Information Modeling (BIM), delivering advanced digital design and coordination solutions for modern construction projects. Our BIM expertise enables us to develop intelligent 3D models that improve design accuracy, enhance collaboration among stakeholders, and support efficient project planning and execution. By integrating engineering knowledge with digital technologies, we help clients reduce design conflicts, optimize resources, and improve overall project outcomes from concept to completion.\n\nWithin the BIM domain, we provide a range of specialized services including 3D modeling, clash detection and coordination, construction sequencing (4D), cost integration (5D), quantity take-offs, shop drawings, and as-built modeling for project handover and facility management support.\n\nKey BIM Services:\n• 3D Architectural, Structural & MEP Modeling\n• Clash Detection and Multi-Discipline Coordination\n• Construction Sequencing & Project Visualization\n• Quantity Take-offs, Shop Drawings & As-Built Modeling"
+        fullDescription: `At Tech Tronix Solutions (TTS), we have a dedicated team of experienced civil engineers specialized in Building Information Modeling (BIM), delivering advanced digital design and coordination solutions for modern construction projects. Our BIM expertise enables us to develop intelligent 3D models that improve design accuracy, enhance collaboration among stakeholders, and support efficient project planning and execution. By integrating engineering knowledge with digital technologies, we help clients reduce design conflicts, optimize resources, and improve overall project outcomes from concept to completion.
+Within the BIM domain, we provide a range of specialized services including 3D modeling, clash detection and coordination, construction sequencing (4D), cost integration (5D), quantity take-offs, shop drawings, and as-built modeling for project handover and facility management support.
+Key BIM Services:`,
+        features: [
+            "3D Architectural, Structural & MEP Modeling",
+            "Clash Detection and Multi-Discipline Coordination",
+            "Construction Sequencing & Project Visualization",
+            "Quantity Take-offs, Shop Drawings & As-Built Modeling"
+        ]
     },
     {
         id: "new-7",
@@ -255,7 +350,15 @@ Types of Geonets:
         slug: "surveying-photogrammetry",
         description: "Our Surveying & Photogrammetry services provide high-resolution aerial surveys and integrated 3D scanning for infrastructure and buildings.",
         image: "/s3.jpeg",
-        fullDescription: "At Tech Tronix Solutions (TTS), our Surveying & Photogrammetry services are focused on two key advanced domains. We provide Oblique Drone Photogrammetry for Urban Modeling, delivering high-resolution aerial surveys that generate detailed 3D urban landscape models for cities and large-scale environments. For buildings and structures, we offer Integrated Building 3D Scanning, combining oblique photogrammetry with handheld LiDAR scanning to produce precise and complete digital twins for design, analysis, and asset management.\n\nIn the field of transportation infrastructure, we specialize in Advanced Highway Condition Assessment using laser scanning, AI-based imaging systems, Ground Penetrating Radar (GPR), and Falling Weight Deflectometer (FWD) testing. This enables Data-Driven Infrastructure Diagnostics, providing comprehensive structural evaluation and condition monitoring of roads and bridges to support maintenance planning, rehabilitation strategies, and long-term asset management decisions.\n\nKey Services:\n• Oblique Drone Photogrammetry for Urban Modeling\n• Integrated Building 3D Scanning\n• Advanced Highway Condition Assessment\n• Data-Driven Infrastructure Diagnostics"
+        fullDescription: `At Tech Tronix Solutions (TTS), our Surveying & Photogrammetry services are focused on two key advanced domains. We provide Oblique Drone Photogrammetry for Urban Modeling, delivering high-resolution aerial surveys that generate detailed 3D urban landscape models for cities and large-scale environments. For buildings and structures, we offer Integrated Building 3D Scanning, combining oblique photogrammetry with handheld LiDAR scanning to produce precise and complete digital twins for design, analysis, and asset management.
+In the field of transportation infrastructure, we specialize in Advanced Highway Condition Assessment using laser scanning, AI-based imaging systems, Ground Penetrating Radar (GPR), and Falling Weight Deflectometer (FWD) testing. This enables Data-Driven Infrastructure Diagnostics, providing comprehensive structural evaluation and condition monitoring of roads and bridges to support maintenance planning, rehabilitation strategies, and long-term asset management decisions.
+Key Services:`,
+        features: [
+            "Oblique Drone Photogrammetry for Urban Modeling:",
+            "Integrated Building 3D Scanning:",
+            "Advanced Highway Condition Assessment:",
+            "Data-Driven Infrastructure Diagnostics:"
+        ]
     },
     {
         id: "new-8",
@@ -263,6 +366,14 @@ Types of Geonets:
         slug: "steel-structure-design-mold-engineering",
         description: "We specialize in delivering advanced engineering solutions in steel structures and steel formwork systems.",
         image: "/s4.jpeg",
-        fullDescription: "At Tech Tronix Solutions, we specialize in delivering advanced engineering solutions in steel structures and steel formwork systems, developed through close coordination between our in-house design team and international suppliers from China and the Middle East, who execute full EPC (Engineering, Procurement & Construction) for these specialized works. This integrated approach allows us to align innovative design concepts with global fabrication capabilities, ensuring efficient, reliable, and high-quality execution of complex engineering projects.\n\nOur partners deliver turnkey EPC solutions for major steel works, including precision-engineered steel molds for casting U-Tub girders and transoms, as well as large-scale tubular dome structures. In addition, they provide advanced electrical retractable roof systems for large arenas, combining structural, mechanical, and electrical engineering expertise to meet international standards for stadium and mega infrastructure developments.\n\nKey Services:\n• Coordinated Design & EPC Delivery of Large-Scale Steel Formwork Systems (U-Tub Girders & Transoms)\n• Turnkey Engineering Solutions for Complex Structural Steel Fabrication Projects\n• Design-Integrated EPC Execution of Large Tubular Dome Structures\n• Electrical Retractable Roof Systems for Stadiums & Large Arenas"
+        fullDescription: `At Tech Tronix Solutions , we specialize in delivering advanced engineering solutions in steel structures and steel formwork systems, developed through close coordination between our in-house design team and international suppliers from China and the Middle East, who execute full EPC (Engineering, Procurement & Construction) for these specialized works. This integrated approach allows us to align innovative design concepts with global fabrication capabilities, ensuring efficient, reliable, and high-quality execution of complex engineering projects.
+Our partners deliver turnkey EPC solutions for major steel works, including precision-engineered steel molds for casting U-Tub girders and transoms, as well as large-scale tubular dome structures. In addition, they provide advanced electrical retractable roof systems for large arenas, combining structural, mechanical, and electrical engineering expertise to meet international standards for stadium and mega infrastructure developments.
+Key Services:`,
+        features: [
+            "Coordinated Design & EPC Delivery of Large-Scale Steel Formwork Systems (U-Tub Girders & Transoms)",
+            "Turnkey Engineering Solutions for Complex Structural Steel Fabrication Projects",
+            "Design-Integrated EPC Execution of Large Tubular Dome Structures",
+            "Electrical Retractable Roof Systems for Stadiums & Large Arenas"
+        ]
     }
 ];

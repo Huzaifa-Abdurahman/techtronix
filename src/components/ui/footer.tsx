@@ -18,7 +18,7 @@ export function Footer() {
                     <div className="mb-8">
                         <Link href="/">
                             <Image
-                                src="/l5.png"
+                                src="/l7.jpg"
                                 alt="Tech-Tronix Solutions"
                                 width={200}
                                 height={70}
@@ -30,15 +30,10 @@ export function Footer() {
                         Global headquarters in Lahore. Leading the world in structural innovation and engineering excellence.
                     </p>
                     <div className="flex gap-4">
-                        <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
+                        <a href="https://www.linkedin.com/company/techtronix/" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
                             <Linkedin size={16} className="group-hover:scale-110 transition-transform" />
                         </a>
-                        <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                            <Twitter size={16} className="group-hover:scale-110 transition-transform" />
-                        </a>
-                        <a href="#" className="w-10 h-10 rounded-sm border border-[#4E9CE4]/50 flex items-center justify-center hover:bg-[#4E9CE4] hover:border-[#4E9CE4] transition-all text-[#CED6DE] hover:text-white group bg-[#050505]/50 backdrop-blur-sm">
-                            <Instagram size={16} className="group-hover:scale-110 transition-transform" />
-                        </a>
+
                     </div>
                 </div>
 

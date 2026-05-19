@@ -137,36 +137,22 @@ export default function ServiceDetailPage() {
                                 {product.description}
                             </p>
 
-                            <div className="prose prose-slate prose-lg text-slate-600 mb-10 font-medium text-[15px] leading-relaxed">
+                            <div className="prose prose-slate prose-lg text-slate-600 mb-10 font-medium text-[15px] leading-relaxed whitespace-pre-wrap">
                                 <p>{product.fullDescription}</p>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 size={14} className="text-[#1b326b]" />
-                                    </div>
-                                    <span className="text-sm font-bold text-[#1b326b]">High Performance</span>
+                            {product.features && product.features.length > 0 && (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                                    {product.features.map((feature, idx) => (
+                                        <div key={idx} className="flex items-center gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
+                                                <CheckCircle2 size={14} className="text-[#1b326b]" />
+                                            </div>
+                                            <span className="text-sm font-bold text-[#1b326b]">{feature}</span>
+                                        </div>
+                                    ))}
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 size={14} className="text-[#1b326b]" />
-                                    </div>
-                                    <span className="text-sm font-bold text-[#1b326b]">Industrial Grade</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 size={14} className="text-[#1b326b]" />
-                                    </div>
-                                    <span className="text-sm font-bold text-[#1b326b]">Expert Supply</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 size={14} className="text-[#1b326b]" />
-                                    </div>
-                                    <span className="text-sm font-bold text-[#1b326b]">TechTronix Warranty</span>
-                                </div>
-                            </div>
+                            )}
 
                             <a href="/contact" className="inline-flex w-full sm:w-auto items-center justify-center gap-3 py-4 px-8 bg-[#1b326b] hover:bg-[#4E9CE4] text-white font-bold text-[15px] tracking-wider transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 rounded-sm uppercase">
                                 Request Quote for this Item <Send size={18} />

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useParams, useRouter, notFound } from 'next/navigation';
+import { useParams, useRouter, useSearchParams, notFound } from 'next/navigation';
 import { ArrowLeft, Send, CheckCircle2 } from 'lucide-react';
 import { products } from '@/data/products';
 
@@ -76,6 +76,8 @@ const AutoCarousel = ({ images, name }: { images: string[], name: string }) => {
 export default function ProductDetailPage() {
     const params = useParams();
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const isFromSuccessStories = searchParams.get('from') === 'success-stories';
 
     // Find product based on slug
     const product = products.find((p) => p.slug === params.slug);
@@ -99,10 +101,16 @@ export default function ProductDetailPage() {
             {/* --- PRODUCT DETAILS CONTAINER --- */}
             <div className="relative z-10 max-w-[1300px] mx-auto w-full px-6 md:px-12">
                 <button
-                    onClick={() => router.back()}
+                    onClick={() => {
+                        if (isFromSuccessStories) {
+                            router.push('/success-stories');
+                        } else {
+                            router.push('/products');
+                        }
+                    }}
                     className="inline-flex items-center gap-2 text-[#1b326b] font-bold text-sm tracking-widest uppercase hover:text-[#4E9CE4] transition-colors mb-10 group bg-white/50 backdrop-blur-sm px-4 py-2 rounded-sm border border-[#CED6DE]"
                 >
-                    <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Products
+                    <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {isFromSuccessStories ? "Back to Success Stories" : "Back to Products"}
                 </button>
 
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/50 overflow-hidden flex flex-col lg:flex-row">
@@ -128,7 +136,7 @@ export default function ProductDetailPage() {
                     <div className="lg:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                         <FadeIn delay={100}>
                             <div className="inline-block bg-[#4E9CE4]/10 text-[#4E9CE4] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
-                                Industrial Equipment
+                                {isFromSuccessStories ? "Success Story" : "Industrial Equipment"}
                             </div>
                             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#1b326b] leading-tight mb-6">
                                 {product.name}
@@ -137,36 +145,49 @@ export default function ProductDetailPage() {
                                 {product.description}
                             </p>
 
-                            <div className="prose prose-slate prose-lg text-slate-600 mb-10 font-medium text-[15px] leading-relaxed">
+                            <div className="prose prose-slate prose-lg text-slate-600 mb-10 font-medium text-[15px] leading-relaxed whitespace-pre-wrap">
                                 <p>{product.fullDescription}</p>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 size={14} className="text-[#1b326b]" />
-                                    </div>
-                                    <span className="text-sm font-bold text-[#1b326b]">High Performance</span>
+                            {product.features && product.features.length > 0 ? (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                                    {product.features.map((feature, idx) => (
+                                        <div key={idx} className="flex items-center gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
+                                                <CheckCircle2 size={14} className="text-[#1b326b]" />
+                                            </div>
+                                            <span className="text-sm font-bold text-[#1b326b]">{feature}</span>
+                                        </div>
+                                    ))}
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 size={14} className="text-[#1b326b]" />
+                            ) : (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
+                                            <CheckCircle2 size={14} className="text-[#1b326b]" />
+                                        </div>
+                                        <span className="text-sm font-bold text-[#1b326b]">High Performance</span>
                                     </div>
-                                    <span className="text-sm font-bold text-[#1b326b]">Industrial Grade</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 size={14} className="text-[#1b326b]" />
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
+                                            <CheckCircle2 size={14} className="text-[#1b326b]" />
+                                        </div>
+                                        <span className="text-sm font-bold text-[#1b326b]">Industrial Grade</span>
                                     </div>
-                                    <span className="text-sm font-bold text-[#1b326b]">Expert Supply</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 size={14} className="text-[#1b326b]" />
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
+                                            <CheckCircle2 size={14} className="text-[#1b326b]" />
+                                        </div>
+                                        <span className="text-sm font-bold text-[#1b326b]">Expert Supply</span>
                                     </div>
-                                    <span className="text-sm font-bold text-[#1b326b]">TechTronix Warranty</span>
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-[#1b326b]/10 flex items-center justify-center shrink-0">
+                                            <CheckCircle2 size={14} className="text-[#1b326b]" />
+                                        </div>
+                                        <span className="text-sm font-bold text-[#1b326b]">TechTronix Warranty</span>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
 
                             <a href="/contact" className="inline-flex w-full sm:w-auto items-center justify-center gap-3 py-4 px-8 bg-[#1b326b] hover:bg-[#4E9CE4] text-white font-bold text-[15px] tracking-wider transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 rounded-sm uppercase">
                                 Request Quote for this Item <Send size={18} />
